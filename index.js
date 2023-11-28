@@ -1,6 +1,6 @@
 const express = require("express");
 const connectionConfig = require("./db/connection");
-const User = require("./model/user");
+const User = require("./model/User");
 const bodyParser = require("body-parser");
 const public_routes = require("./route/public_route");
 const auth_routes = require("./route/auth_route");

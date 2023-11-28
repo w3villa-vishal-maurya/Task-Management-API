@@ -13,6 +13,10 @@ const userSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: String
+    },
+    token:{
+        type: String,
+        default: null
     }
 }, {timestamps: true});
 
