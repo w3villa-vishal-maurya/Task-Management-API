@@ -1,5 +1,6 @@
 const Task = require("../model/Task")
 const mongodb = require("mongodb");
+const client = require("../redis/client");
 
 async function showTask(req, res) {
     try {
@@ -7,6 +8,10 @@ async function showTask(req, res) {
         const allTask = await Task.find({ user_id });
 
         if (allTask.length > 0) {
+
+            // Cache data to redis...
+            client.set("allTask", JSON.stringify(allTask));
+
             return res.status(200).send({ "Task": allTask });
         }
         else {
@@ -40,6 +45,10 @@ async function taskWithId(req, res) {
 
         const result = await Task.findById({ _id: new mongodb.ObjectId(id) });
         if (result) {
+
+            // Cache data to redis...
+            client.set("taskWithId", JSON.stringify(result));
+
             return res.status(200).send({ "Task": result });
         }
         else {
@@ -48,7 +57,7 @@ async function taskWithId(req, res) {
         }
     }
     catch (error) {
-        return res.status(400).send({ error: "Invalid Id" });
+        return res.status(400).send({ error: error.message });
     }
 }
 
@@ -113,11 +122,74 @@ async function deleteTask(req, res) {
     }
 }
 
+async function getPendingTask(req, res) {
+    try {
+        const user_id = req.user._id;
+
+        const allTask = await Task.find({ user_id: user_id });
+
+        if (allTask) {
+            const pendingTask = allTask.filter((task) => {
+                if (task.createdAt === task.updatedAt && !task.completed) {
+                    return true;
+                }
+
+                return false;
+            })
+
+            // Cache data to redis...
+            client.set("pendingTask", JSON.stringify(pendingTask));
+
+            return res.status(200).send({ "pendingTask": pendingTask });
+        }
+        else {
+            return res.status(200).send({ "pendingTask": "{}" });
+        }
+
+    }
+    catch (err) {
+        return res.status(200).send({ error: err.message });
+    }
+}
+
+
+async function getCompletedTask(req, res) {
+    try {
+        const user_id = req.user._id;
+
+        const allTask = await Task.find({ user_id: user_id });
+
+        if (allTask) {
+            const completedTask = allTask.filter((task) => {
+                if (task.completed) {
+                    return true;
+                }
+
+                return false;
+            })
+
+            // Cache data to redis...
+            client.set("completedTask", JSON.stringify(completedTask));
+
+            return res.status(200).send({ "completedTask": completedTask });
+        }
+        else {
+            return res.status(200).send({ "completedTask": "{}" });
+        }
+
+    }
+    catch (err) {
+        return res.status(200).send({ error: err.message });
+    }
+}
+
 
 module.exports = {
     showTask,
     createTask,
     taskWithId,
     updateTask,
-    deleteTask
+    deleteTask,
+    getPendingTask,
+    getCompletedTask
 }

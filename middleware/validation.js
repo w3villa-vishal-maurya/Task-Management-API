@@ -13,11 +13,14 @@ const loginValidator = [
     body('password').notEmpty()
 ];
 
+const taskValidator = [
+    body("description").notEmpty()
+]
+
 function verifyJWT(req, res, next){
     if(req.session.autherization){
         token = req.session.autherization["accessToken"];
         jwt.verify(token, "secret", (err, user)=>{
-            console.log(user);
             if(!err){
                 req.user = user;
                 next();
@@ -35,5 +38,6 @@ function verifyJWT(req, res, next){
 module.exports = {
     regValidator,
     loginValidator,
+    taskValidator,
     verifyJWT
 };
