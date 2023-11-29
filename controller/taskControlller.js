@@ -62,6 +62,30 @@ async function taskWithId(req, res) {
 }
 
 async function updateTask(req, res) {
+    /*  #swagger.auto = false
+
+            #swagger.path = 'auth/update/{id}'
+            #swagger.method = 'patch'
+            #swagger.description = 'Endpoint added manually.'
+            #swagger.produces = ["application/json"]
+            #swagger.consumes = ["application/json"]
+        */
+
+    /*  #swagger.parameters['id'] = {
+            in: 'path',
+            description: 'Task Id',
+            required: true
+        }
+    */
+
+    /*  #swagger.parameters['description'] = {
+            in: 'query',
+            description: 'Task new Description.',
+            required: true, 
+            type: 'string'
+        }
+    */
+
     try {
         const id = req.params.id;
 
