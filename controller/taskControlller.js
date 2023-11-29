@@ -1,7 +1,7 @@
 const Task = require("../model/Task")
 const mongodb = require("mongodb");
 const client = require("../redis/client");
- 
+
 async function showTask(req, res) {
     try {
         const user_id = req.user._id;
