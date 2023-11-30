@@ -352,3 +352,211 @@ API documentation: http://localhost:3000/doc, 2023-11-30 12:19:51
 [info] Connected to the redis server, 2023-11-30 18:42:46 
 [info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 18:42:46 
 [error] User already exists!!, 2023-11-30 18:42:47 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 22:31:05 
+[info] Connected to the redis server, 2023-11-30 22:31:05 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 22:31:06 
+[error] User already exists!!, 2023-11-30 22:31:06 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 22:33:04 
+[info] Connected to the redis server, 2023-11-30 22:33:04 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 22:33:05 
+[error] User already exists!!, 2023-11-30 22:33:05 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 22:33:33 
+[info] Connected to the redis server, 2023-11-30 22:33:33 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-11-30 22:33:33 
+[error] User already exists!!, 2023-11-30 22:33:33 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 22:35:12 
+[info] Connected to the redis server, 2023-11-30 22:35:12 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-11-30 22:35:12 
+[error] User already exists!!, 2023-11-30 22:35:13 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 22:37:01 
+[info] Connected to the redis server, 2023-11-30 22:37:01 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 22:37:02 
+[info] User Successfully registered!! You can login!, 2023-11-30 22:37:02 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:12:26 
+[info] Connected to the redis server, 2023-11-30 23:12:26 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:12:27 
+[error] User already exists!!, 2023-11-30 23:13:01 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:14:43 
+[info] Connected to the redis server, 2023-11-30 23:14:43 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:14:44 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:14:58 
+[info] Connected to the redis server, 2023-11-30 23:14:58 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:14:58 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:01 
+[info] Connected to the redis server, 2023-11-30 23:15:01 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:01 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:03 
+[info] Connected to the redis server, 2023-11-30 23:15:03 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:04 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:07 
+[info] Connected to the redis server, 2023-11-30 23:15:07 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:07 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:14 
+[info] Connected to the redis server, 2023-11-30 23:15:14 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:15 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:16 
+[info] Connected to the redis server, 2023-11-30 23:15:16 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:17 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:19 
+[info] Connected to the redis server, 2023-11-30 23:15:19 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:20 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:24 
+[info] Connected to the redis server, 2023-11-30 23:15:24 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:24 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:30 
+[info] Connected to the redis server, 2023-11-30 23:15:30 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:30 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:32 
+[info] Connected to the redis server, 2023-11-30 23:15:32 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:33 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:38 
+[info] Connected to the redis server, 2023-11-30 23:15:38 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:39 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:43 
+[info] Connected to the redis server, 2023-11-30 23:15:43 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:45 
+[info] Connected to the redis server, 2023-11-30 23:15:45 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:15:46 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:15:57 
+[info] Connected to the redis server, 2023-11-30 23:15:57 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:15:57 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:04 
+[info] Connected to the redis server, 2023-11-30 23:16:04 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:04 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:07 
+[info] Connected to the redis server, 2023-11-30 23:16:07 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:07 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:09 
+[info] Connected to the redis server, 2023-11-30 23:16:09 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:10 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:12 
+[info] Connected to the redis server, 2023-11-30 23:16:12 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:12 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:15 
+[info] Connected to the redis server, 2023-11-30 23:16:15 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:15 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:28 
+[info] Connected to the redis server, 2023-11-30 23:16:28 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:29 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:36 
+[info] Connected to the redis server, 2023-11-30 23:16:36 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:37 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:45 
+[info] Connected to the redis server, 2023-11-30 23:16:45 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:45 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:51 
+[info] Connected to the redis server, 2023-11-30 23:16:51 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:16:53 
+[info] Connected to the redis server, 2023-11-30 23:16:53 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:16:54 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:17:14 
+[info] Connected to the redis server, 2023-11-30 23:17:14 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:17:14 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:17:26 
+[info] Connected to the redis server, 2023-11-30 23:17:26 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:17:27 
+[error] User already exists!!, 2023-11-30 23:17:27 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:18:15 
+[info] Connected to the redis server, 2023-11-30 23:18:15 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:18:16 
+[error] User already exists!!, 2023-11-30 23:18:16 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:18:42 
+[info] Connected to the redis server, 2023-11-30 23:18:42 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-11-30 23:18:42 
+[error] User already exists!!, 2023-11-30 23:18:43 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:19:06 
+[info] Connected to the redis server, 2023-11-30 23:19:06 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-11-30 23:19:06 
+[error] User already exists!!, 2023-11-30 23:19:06 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:32:12 
+[info] Connected to the redis server, 2023-11-30 23:32:12 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:32:13 
+[error] User already exists!!, 2023-11-30 23:32:13 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:33:25 
+[info] Connected to the redis server, 2023-11-30 23:33:25 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-11-30 23:33:26 
+[error] User already exists!!, 2023-11-30 23:33:26 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:34:14 
+[info] Connected to the redis server, 2023-11-30 23:34:14 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:34:15 
+[error] User already exists!!, 2023-11-30 23:34:15 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:40:33 
+[info] Connected to the redis server, 2023-11-30 23:40:33 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:40:33 
+[error] User already exists!!, 2023-11-30 23:40:34 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:41:25 
+[info] Connected to the redis server, 2023-11-30 23:41:25 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-11-30 23:41:25 
+[error] User already exists!!, 2023-11-30 23:41:25 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:45:37 
+[info] Connected to the redis server, 2023-11-30 23:45:38 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:45:38 
+[error] User already exists!!, 2023-11-30 23:45:39 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:46:34 
+[info] Connected to the redis server, 2023-11-30 23:46:34 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:46:34 
+[error] User already exists!!, 2023-11-30 23:46:35 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:49:11 
+[info] Connected to the redis server, 2023-11-30 23:49:11 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:49:11 
+[error] User already exists!!, 2023-11-30 23:49:12 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:50:00 
+[info] Connected to the redis server, 2023-11-30 23:50:00 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:50:01 
+[error] User already exists!!, 2023-11-30 23:50:01 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:50:44 
+[info] Connected to the redis server, 2023-11-30 23:50:44 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:50:44 
+[error] User already exists!!, 2023-11-30 23:50:45 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:51:26 
+[info] Connected to the redis server, 2023-11-30 23:51:26 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-11-30 23:51:27 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:52:00 
+[info] Connected to the redis server, 2023-11-30 23:52:00 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:52:00 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:56:35 
+[info] Connected to the redis server, 2023-11-30 23:56:35 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:56:35 
+[info] Server is started running, You are listening the port: 3000, 2023-11-30 23:58:19 
+[info] Connected to the redis server, 2023-11-30 23:58:19 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 23:58:19 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:00:39 
+[info] Connected to the redis server, 2023-12-01 00:00:39 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-01 00:00:40 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:01:22 
+[info] Connected to the redis server, 2023-12-01 00:01:22 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-12-01 00:01:22 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:02:02 
+[info] Connected to the redis server, 2023-12-01 00:02:02 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 00:02:03 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:03:05 
+[info] Connected to the redis server, 2023-12-01 00:03:05 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-01 00:03:06 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:05:42 
+[info] Connected to the redis server, 2023-12-01 00:05:42 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 00:05:43 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:06:26 
+[info] Connected to the redis server, 2023-12-01 00:06:26 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-12-01 00:06:27 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:07:10 
+[info] Connected to the redis server, 2023-12-01 00:07:10 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 00:07:10 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:09:10 
+[info] Connected to the redis server, 2023-12-01 00:09:10 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 00:09:10 
+[error] User already exists!!, 2023-12-01 00:09:11 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:09:43 
+[info] Connected to the redis server, 2023-12-01 00:09:43 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-01 00:09:44 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:09:58 
+[info] Connected to the redis server, 2023-12-01 00:09:58 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-01 00:09:58 
+[error] User already exists!!, 2023-12-01 00:09:59 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:10:31 
+[info] Connected to the redis server, 2023-12-01 00:10:31 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-12-01 00:10:32 
+[error] User already exists!!, 2023-12-01 00:10:32 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 00:11:19 
+[info] Connected to the redis server, 2023-12-01 00:11:19 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 00:11:19 
+[info] User Successfully registered!! You can login!, 2023-12-01 00:11:20 

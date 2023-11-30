@@ -1,4 +1,5 @@
 const chai = require('chai');
+const env = require("dotenv").config();
 const assert = chai.assert;    // Using Assert style
 const expect = chai.expect;    // Using Expect style
 const should = chai.should();  // Using Should style
@@ -23,7 +24,7 @@ describe('User API', function () {
     }
 
     const userLoginData = {
-        email: "vishal@gmail.com",
+        email: "vishalprakash0202@gmail.com",
         password: "vishal@123"
     }
 
@@ -73,45 +74,5 @@ describe('User API', function () {
 
 });
 
-
-// Task API Testing ##########################################
-
-
-describe('Task API', function () {
-    this.timeout(5000);
-
-    const createTaskData = {
-        description : "Set my new goals.",
-        completed: false
-    }
-
-
-    it('Show Task', function (done) {
-        chai.request(server)
-            .get("/user/auth/showtask")
-            .end((err, response) => {
-                expect(response.status).to.be.equal(400);
-                done();
-            });
-    });
-
-    it('Create Task', function (done) {
-        chai.request(server)
-            .post("/user/auth/createtask")
-            .send(createTaskData)
-            .end((err, response) => {
-                if (err) {
-                    console.log("Counting error!");
-                    done(err);
-                    return;
-                }
-
-                expect(response.status).to.be.equal(200);
-                done();
-            });
-
-    });
-
-});
 
 

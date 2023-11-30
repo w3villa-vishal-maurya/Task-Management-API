@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const randomstring = require("randomstring");
 const nodemailer = require("nodemailer");
 const logger = require("../logger/logger");
+const env = require("dotenv").config();
 
 
 async function regReq(req, res) {
@@ -57,7 +58,11 @@ async function loginReq(req, res) {
                 req.session.autherization = {
                     accessToken, user
                 };
-                return res.status(200).json({ message: "User Successfully logged In!!" });
+                return res.status(200).json({ 
+                    "data": {
+                        "accessToken": accessToken
+                      },
+                    message: "User Successfully logged In!!" });
             }
             else {
                 throw new Error("Wrong Credentials!!!");
