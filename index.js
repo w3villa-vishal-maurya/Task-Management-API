@@ -8,6 +8,8 @@ const badReq = require("./middleware/badRoute");
 const session = require("express-session");
 const {verifyJWT} = require("./middleware/validation");
 const logger = require("./logger/logger");
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger/swagger-output.json')    
 
 const PORT = 3000;
 const app = express();
@@ -18,6 +20,8 @@ connectionConfig();
 app.use(express.json());
 app.use(bodyParser.json());
 app.use("/user", session({secret: "secret", resave: true, saveUninitialized: true}));
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+
 
 app.use("/user/auth/*", verifyJWT);
 
@@ -35,4 +39,5 @@ app.use("/*", badReq);
 app.listen(PORT, ()=>{
     // console.log("You are listening the port: ", PORT);
     logger.info(`Server is started running, You are listening the port: ${PORT}`);
+    console.log("Server is running!\nAPI documentation: http://localhost:3000/doc")
 })

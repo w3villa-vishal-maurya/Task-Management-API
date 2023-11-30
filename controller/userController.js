@@ -19,6 +19,7 @@ async function regReq(req, res) {
         const hashPassword = bcrypt.hashSync(password, salt);
 
         const user = await User.find( { email: email});
+        console.log(user);
 
         if (!user.length == 0) {
             logger.error("User already exists!!");
