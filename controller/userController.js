@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const randomstring = require("randomstring");
 const nodemailer = require("nodemailer");
+const logger = require("../logger/logger");
 
 
 async function regReq(req, res) {
@@ -14,23 +15,25 @@ async function regReq(req, res) {
             return res.send(result.array());
         }
 
-        console.log(req.body);
-        const user = await User.find(req.body);
-
-        if (!user.length == 0) {
-            return res.status(404).json({ message: "User already exists!!!" });
-        }
-
         const salt = bcrypt.genSaltSync(10);
         const hashPassword = bcrypt.hashSync(password, salt);
+
+        const user = await User.find( { email: email});
+
+        if (!user.length == 0) {
+            logger.error("User already exists!!");
+            return res.status(404).json({ message: "User already exists!!!" });
+        }
 
         const newUser = await User.create(
             { name: name, email, email, password: hashPassword, phoneNumber: phoneNumber }
         );
 
+        logger.info("User Successfully registered!! You can login!");
         return res.status(200).json({ message: "User Successfully registered!! You can login!" });
     }
     catch (error) {
+        logger.error(error.message);
         return res.status(500).json({ error: error.message });
     }
 }

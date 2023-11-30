@@ -7,6 +7,7 @@ const auth_routes = require("./route/auth_route");
 const badReq = require("./middleware/badRoute");
 const session = require("express-session");
 const {verifyJWT} = require("./middleware/validation");
+const logger = require("./logger/logger");
 
 const PORT = 3000;
 const app = express();
@@ -32,5 +33,6 @@ app.use("/user", auth_routes);
 app.use("/*", badReq);
 
 app.listen(PORT, ()=>{
-    console.log("You are listening the port: ", PORT);
+    // console.log("You are listening the port: ", PORT);
+    logger.info(`Server is started running, You are listening the port: ${PORT}`);
 })
