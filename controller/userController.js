@@ -45,6 +45,8 @@ async function loginReq(req, res) {
         const { email, password } = req.body;
         const result = validationResult(req);
         if (!result.isEmpty()) {
+            logger.error(`Form Validation Error Occured`);
+            logger.error(result.array());
             return res.send(result.array());
         }
 
@@ -69,6 +71,7 @@ async function loginReq(req, res) {
         }
     }
     catch (error) {
+        logger.error(error.message);
         return res.status(500).json({ error: error.message });
     }
 }
@@ -76,9 +79,11 @@ async function loginReq(req, res) {
 function logOutReq(req, res) {
     if (req.session.autherization["accessToken"]) {
         req.session.autherization["accessToken"] = null;
+        logger.info("User logged Out!");
         return res.status(200).json({ title: "Successful", message: "User logged Out!" });
     }
     else {
+        logger.info("User is not loogged In, Login First");
         return res.status(403).json({ message: "User is not loogged In, Login First" });
     }
 }
@@ -143,6 +148,7 @@ async function forgetPassword(req, res) {
         }
     }
     catch (error) {
+        logger.error(error.message);
         return res.status(400).json({ title: "Unsuccessful", message: error.message });
     }
 }

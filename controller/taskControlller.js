@@ -1,6 +1,7 @@
 const Task = require("../model/Task")
 const mongodb = require("mongodb");
 const client = require("../redis/client");
+const logger = require("../logger/logger");
 
 async function showTask(req, res) {
     try {
@@ -12,13 +13,16 @@ async function showTask(req, res) {
             // Cache data to redis...
             client.set("allTask", JSON.stringify(allTask));
 
+            logger.info("All task have been responded!");
             return res.status(200).send({ "Task": allTask });
         }
         else {
+            logger.info("You have no any current Task!");
             return res.status(400).send({ "Update": "You have no any current Task!" });
         }
     }
     catch (err) {
+        logger.error(err.message);
         return res.status(400).send({ message: err.message });
     }
 }
@@ -32,9 +36,11 @@ async function createTask(req, res) {
 
         await task.save();
 
+        logger.info("Seccussful created you task!");
         return res.status(201).send({ message: "Seccussful created you task!" });
     }
     catch (err) {
+        logger.error(err.message);
         return res.status(400).send({ error: err.message });
     }
 }
@@ -57,6 +63,7 @@ async function taskWithId(req, res) {
         }
     }
     catch (error) {
+        logger.error(error.message);
         return res.status(400).send({ error: error.message });
     }
 }
@@ -97,11 +104,13 @@ async function updateTask(req, res) {
 
         const result = await Task.findByIdAndUpdate(filter, update);
         if (result) {
+            logger.info("Recored successfully has been updated!");
             res.writeHead(201, { "Content-Type": "Application/json" });
             res.end();
         }
         else {
             res.statusCode = 404;
+            logger.info("Record does not exists!");
             res.write(
                 JSON.stringify({ title: "Not found", message: "Record does not exists!" })
             );
@@ -109,8 +118,9 @@ async function updateTask(req, res) {
         }
     }
     catch (err) {
-        console.log(err);
+        logger.error(err.message);
         res.writeHead(400, { "Content-Type": "Application/json" });
+        logger.error("Validation failed, Id is not Valid!");
         res.end(
             JSON.stringify({
                 title: "Validation Failed",
@@ -128,6 +138,7 @@ async function deleteTask(req, res) {
         const result = await Task.deleteOne({ _id: new mongodb.ObjectId(id) });
         if (result.deletedCount != 0) {
             res.statusCode = 200;
+            logger.info("Task has been deleted from database!");
             res.write(JSON.stringify({ title: "Successfull", mesage: "Task has been removed!" }));
             res.end();
         }
@@ -138,7 +149,7 @@ async function deleteTask(req, res) {
         }
     }
     catch (err) {
-        console.log(err);
+        logger.error(err.message);
         res.writeHead(400, { "Content-Type": "Application/json" });
         res.end(
             JSON.stringify({
