@@ -280,11 +280,23 @@
             "description": "Task Id"
           },
           {
-            "name": "description",
-            "in": "query",
-            "description": "Task new Description.",
+            "name": "body",
+            "in": "body",
+            "description": "Task description",
             "required": true,
-            "type": "string"
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "completed": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
           }
         ],
         "responses": {

@@ -78,11 +78,14 @@ async function updateTask(req, res) {
         }
     */
 
-    /*  #swagger.parameters['description'] = {
-            in: 'query',
-            description: 'Task new Description.',
-            required: true, 
-            type: 'string'
+    /*  #swagger.parameters['body'] = {
+            in: 'body',
+            description: 'Task description',
+            required: true,
+            schema: {
+                description: "any",
+                completed: false
+            }
         }
     */
 

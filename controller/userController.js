@@ -14,15 +14,15 @@ async function regReq(req, res) {
             return res.send(result.array());
         }
 
-        console.log(req.body);
-        const user = await User.find(req.body);
+        const salt = bcrypt.genSaltSync(10);
+        const hashPassword = bcrypt.hashSync(password, salt);
+
+        const user = await User.find( { email: email});
+        console.log(user);
 
         if (!user.length == 0) {
             return res.status(404).json({ message: "User already exists!!!" });
         }
-
-        const salt = bcrypt.genSaltSync(10);
-        const hashPassword = bcrypt.hashSync(password, salt);
 
         const newUser = await User.create(
             { name: name, email, email, password: hashPassword, phoneNumber: phoneNumber }
