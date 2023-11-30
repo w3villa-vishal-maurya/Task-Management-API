@@ -15,7 +15,7 @@ async function showTask(req, res) {
             return res.status(200).send({ "Task": allTask });
         }
         else {
-            return res.status(400).send({ "Update": "You have no any current Task!" });
+            return res.status(200).send({ "Update": "You have no any current Task!" });
         }
     }
     catch (err) {

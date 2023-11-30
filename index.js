@@ -2,8 +2,8 @@ const express = require("express");
 const connectionConfig = require("./db/connection");
 const User = require("./model/User");
 const bodyParser = require("body-parser");
-const public_routes = require("./route/public_route");
-const auth_routes = require("./route/auth_route");
+const public_routes = require("./route/public_routes");
+const auth_routes = require("./route/auth_routes");
 const badReq = require("./middleware/badRoute");
 const session = require("express-session");
 const {verifyJWT} = require("./middleware/validation");
@@ -41,3 +41,5 @@ app.listen(PORT, ()=>{
     logger.info(`Server is started running, You are listening the port: ${PORT}`);
     console.log("Server is running!\nAPI documentation: http://localhost:3000/doc")
 })
+
+module.exports = app;

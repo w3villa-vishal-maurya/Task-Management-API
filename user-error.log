@@ -1,0 +1,7 @@
+[error] Cannot destructure property 'name' of 'req.body' as it is undefined., 2023-11-30 17:14:03 
+[error] Cannot destructure property 'name' of 'req.body' as it is undefined., 2023-11-30 17:16:20 
+[error] User already exists!!, 2023-11-30 18:30:10 
+[error] User already exists!!, 2023-11-30 18:31:03 
+[error] User already exists!!, 2023-11-30 18:36:24 
+[error] User already exists!!, 2023-11-30 18:40:51 
+[error] User already exists!!, 2023-11-30 18:42:47 
