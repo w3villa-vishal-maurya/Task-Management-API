@@ -26,11 +26,8 @@
     "nodemon": "^3.0.1",
     "randomstring": "^1.3.0",
     "redis": "^4.6.11",
-<<<<<<< HEAD
-    "winston": "^3.11.0"
-=======
+    "winston": "^3.11.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^4.1.4"
->>>>>>> swagger
   }
 }
