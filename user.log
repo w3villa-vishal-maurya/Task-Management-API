@@ -31,3 +31,27 @@ API documentation: http://localhost:3000/doc, 2023-12-01 12:22:13
 API documentation: http://localhost:3000/doc, 2023-12-01 12:22:23 
 [info] Connected to the redis server, 2023-12-01 12:22:23 
 [info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-01 12:22:23 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 12:23:35 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-01 12:23:35 
+[info] Connected to the redis server, 2023-12-01 12:23:35 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 12:23:36 
+[info] Seccussful created you task!, 2023-12-01 12:23:36 
+[info] Recored successfully has been updated!, 2023-12-01 12:23:36 
+[info] User Successfully registered!! You can login!, 2023-12-01 12:23:37 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 12:27:01 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-01 12:27:01 
+[info] Connected to the redis server, 2023-12-01 12:27:01 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 12:27:02 
+[info] Seccussful created you task!, 2023-12-01 12:27:02 
+[info] Recored successfully has been updated!, 2023-12-01 12:27:02 
+[info] User Successfully registered!! You can login!, 2023-12-01 12:27:03 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 12:42:32 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-01 12:42:32 
+[info] Connected to the redis server, 2023-12-01 12:42:32 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 12:42:33 
+[info] Seccussful created you task!, 2023-12-01 12:42:34 
+[info] Recored successfully has been updated!, 2023-12-01 12:42:34 
+[info] User Successfully registered!! You can login!, 2023-12-01 12:42:34 

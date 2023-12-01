@@ -19,7 +19,7 @@ async function regReq(req, res) {
         const salt = bcrypt.genSaltSync(10);
         const hashPassword = bcrypt.hashSync(password, salt);
 
-        const user = await User.find( { email: email});
+        const user = await User.find({ email: email });
 
         if (!user.length == 0) {
             logger.error("User already exists!!");
@@ -55,16 +55,17 @@ async function loginReq(req, res) {
             if (bcrypt.compareSync(password, user.password)) {
                 const accessToken = jwt.sign({
                     _id: user._id
-                }, 'secret', { expiresIn: 60 * 60 });
+                }, process.env.SECRET_KEY, { expiresIn: 60 * 60 });
 
                 req.session.autherization = {
                     accessToken, user
                 };
-                return res.status(200).json({ 
+                return res.status(200).json({
                     "data": {
                         "accessToken": accessToken
-                      },
-                    message: "User Successfully logged In!!" });
+                    },
+                    message: "User Successfully logged In!!"
+                });
             }
             else {
                 throw new Error("Wrong Credentials!!!");
@@ -93,42 +94,42 @@ function logOutReq(req, res) {
 }
 
 
-const sendResetPasswordMail = async(name, email, token)=>{
-    try{
+const sendResetPasswordMail = async (name, email, token) => {
+    try {
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 587,
             secure: false,
-            requireTLS : true,
+            requireTLS: true,
             auth: {
-              // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-              user: 'vishalprakash0202@gmail.com',
-              pass: '9682043049@'
+                // TODO: replace `user` and `pass` values from <https://forwardemail.net>
+                user: 'vishalprakash0202@gmail.com',
+                pass: '9682043049@'
             }
-          });
+        });
 
 
-          const mailOptions = {
+        const mailOptions = {
             from: "vishalprakash0202@gmail.com",
             to: email,
             subject: "For Reset password",
             html: `<p> hi ${name}, Please copy the link <a href="http://127:0.0.1:3000/reset-password?token=${token}">Reset your password!</a>`
-          }
+        }
 
-          console.log("reach here");
+        console.log("reach here");
 
-          transporter.sendMail(mailOptions, (err, info)=>{
-            if(err){
+        transporter.sendMail(mailOptions, (err, info) => {
+            if (err) {
                 console.log(err.message);
             }
-            else{
+            else {
                 console.log("eMail has been sent:- ", info.response);
             }
-          })
+        })
     }
-    catch{
-        (error)=>{
-            res.status(400).send({message: error.message});
+    catch {
+        (error) => {
+            res.status(400).send({ message: error.message });
         }
     }
 }

@@ -20,7 +20,7 @@ const taskValidator = [
 function verifyJWT(req, res, next){
     if(req.session.autherization || req.header('Authorization')){
         token = req.header('Authorization') ? req.header('Authorization') : req.session.autherization["accessToken"];
-        jwt.verify(token, "secret", (err, user)=>{
+        jwt.verify(token, process.env.SECRET_KEY, (err, user)=>{
             if(!err){
                 req.user = user;
                 next();
