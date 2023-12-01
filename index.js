@@ -39,12 +39,7 @@ app.use("/*", badReq);
 app.listen(PORT, ()=>{
     // console.log("You are listening the port: ", PORT);
     logger.info(`Server is started running, You are listening the port: ${PORT}`);
-<<<<<<< HEAD
     logger.info(`Server is running!\nAPI documentation: http://localhost:3000/doc`)
 })
-=======
-    console.log("Server is running!\nAPI documentation: http://localhost:3000/doc")
-})
-
+    
 module.exports = app;
->>>>>>> unit-testing

@@ -18,3 +18,16 @@ API documentation: http://localhost:3000/doc, 2023-11-30 12:19:28
 API documentation: http://localhost:3000/doc, 2023-11-30 12:19:51 
 [info] Connected to the redis server, 2023-11-30 12:19:51 
 [info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-11-30 12:19:53 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 12:22:13 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-01 12:22:13 
+[info] Connected to the redis server, 2023-12-01 12:22:13 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 12:22:14 
+[info] Seccussful created you task!, 2023-12-01 12:22:15 
+[info] Recored successfully has been updated!, 2023-12-01 12:22:15 
+[info] User Successfully registered!! You can login!, 2023-12-01 12:22:15 
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 12:22:23 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-01 12:22:23 
+[info] Connected to the redis server, 2023-12-01 12:22:23 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-01 12:22:23 
