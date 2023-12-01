@@ -23,21 +23,28 @@ const {
 
 
 // ##### User Credentials Routes #############
+auth_routes.get("/auth/profile", (req, res) => {
+    return res.status(200).send(req.user);
+})
+
 auth_routes.post("/login",
     loginValidator,
     loginReq
 );
 
-auth_routes.get("/auth/profile", (req, res) => {
-    return res.status(200).send(req.user);
-})
 
 auth_routes.get("/auth/logout", logOutReq);
 
 // ##### Task Routes #############
+
 auth_routes.get("/auth/showtask",
     showTaskCache,
     showTask);
+
+auth_routes.post("/auth/createtask",
+    taskValidator,
+    createTask
+);
 
 auth_routes.get("/auth/task/:id",
     taskWithIdCache,
@@ -57,10 +64,6 @@ auth_routes.put("/auth/update/:id",
     updateTask
 );
 
-auth_routes.post("/auth/createtask",
-    taskValidator,
-    createTask
-);
 
 auth_routes.delete("/auth/delete/:id", deleteTask);
 

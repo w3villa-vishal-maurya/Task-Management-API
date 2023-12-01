@@ -1,5 +1,5 @@
 const public_routes = require("express").Router();
-const { regReq, forgetPassword } = require("../controller/userController");
+const { regReq, forgetPassword, resetPassword} = require("../controller/userController");
 const { regValidator } = require("../middleware/validation");
 
 
@@ -14,5 +14,7 @@ public_routes.post("/register",
 
 
 public_routes.post("/forget-password", forgetPassword);
+
+public_routes.post("/reset-password/:token", resetPassword);
 
 module.exports = public_routes;

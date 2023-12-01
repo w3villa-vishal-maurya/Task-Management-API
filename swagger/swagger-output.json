@@ -46,6 +46,9 @@
         "responses": {
           "200": {
             "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
           }
         }
       }
@@ -122,6 +125,55 @@
         }
       }
     },
+    "/reset-password/{token}": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "token",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/user/auth/profile": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
     "/user/login": {
       "post": {
         "description": "",
@@ -155,19 +207,6 @@
         }
       }
     },
-    "/user/auth/profile": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        }
-      }
-    },
     "/user/auth/logout": {
       "get": {
         "description": "",
@@ -196,6 +235,43 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/user/auth/createtask": {
+      "post": {
+        "description": "Endpoint added manually.",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "Task description",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "description": {
+                  "type": "string",
+                  "example": "any"
+                },
+                "completed": {
+                  "type": "boolean",
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden"
           }
         }
       }
@@ -306,22 +382,6 @@
         }
       }
     },
-    "/user/auth/createtask": {
-      "post": {
-        "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "400": {
-            "description": "Bad Request"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        }
-      }
-    },
     "/user/auth/delete/{id}": {
       "delete": {
         "description": "",
@@ -370,13 +430,13 @@
     "Task": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": "string",
-          "example": "Task title"
-        },
         "description": {
           "type": "string",
           "example": "Task description"
+        },
+        "completed": {
+          "type": "boolean",
+          "example": false
         }
       }
     }

@@ -103,28 +103,26 @@ const sendResetPasswordMail = async (name, email, token) => {
             requireTLS: true,
             auth: {
                 // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-                user: 'vishalprakash0202@gmail.com',
-                pass: '9682043049@'
+                user: 'vishalprakash.maurya@w3villa.com',
+                pass: 'vishal@123'
             }
         });
 
-
         const mailOptions = {
-            from: "vishalprakash0202@gmail.com",
+            from: "vishalprakash.maurya@w3villa.com",
             to: email,
             subject: "For Reset password",
-            html: `<p> hi ${name}, Please copy the link <a href="http://127:0.0.1:3000/reset-password?token=${token}">Reset your password!</a>`
+            html: `<p> hi ${name}, Please copy the link <a href="http://127.0.0.1:3000/reset-password/${token}">Reset your password!</a>`
         }
 
-        console.log("reach here");
 
         transporter.sendMail(mailOptions, (err, info) => {
             if (err) {
-                console.log(err.message);
+               throw new Error(err);
             }
-            else {
-                console.log("eMail has been sent:- ", info.response);
-            }
+            // else {
+            //     console.log("eMail has been sent:- ", info.response);
+            // }
         })
     }
     catch {
@@ -138,13 +136,11 @@ const sendResetPasswordMail = async (name, email, token) => {
 async function forgetPassword(req, res) {
     try {
         const email = req.body.email;
-        console.log(email);
         const user = await User.find({ email: email });
 
         if (user.length > 0) {
             const token = randomstring.generate();
             const data = await User.updateOne({ email: email }, { $set: { token: token } });
-            console.log("hello here...");
             await sendResetPasswordMail(user[0].name, user[0].email, token);
             return res.status(200).json({ title: "Successful", message: "Please check your mail!!" });
         }
@@ -159,11 +155,36 @@ async function forgetPassword(req, res) {
 }
 
 
+async function resetPassword(req, res) {
+    try {
+        const token = req.params.token;
+        const user = await User.find({ token: token });
+
+        // 2a$10$rxcQ2WtyQkEC.HkponYqR.Q7P4yIGx5TGLVIEDfAc9qrVtlFb9gg2
+
+        if (user.length > 0) {
+            const salt = bcrypt.genSaltSync(10);
+            const hashPassword = bcrypt.hashSync(req.body.password, salt);
+
+            const data = await User.updateOne({ token: token }, { $set: { password: hashPassword, token: null} });
+            return res.status(200).json({ title: "Successful", message: JSON.stringify(data) });
+        }
+        else {
+            throw new Error("User is not found! Generated Token expired or invalid!");
+        }
+    }
+    catch (error) {
+        return res.status(400).json({ title: "Unsuccessful", message: error.message });
+    }
+}
+
+
 
 
 module.exports = {
     regReq,
     loginReq,
     logOutReq,
-    forgetPassword
+    forgetPassword,
+    resetPassword
 }

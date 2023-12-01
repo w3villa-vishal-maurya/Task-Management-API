@@ -42,8 +42,8 @@ const doc = {
             phoneNumber: "Password@123",
         },
         Task: {
-            title: "Task title",
             description: "Task description",
+            completed: false,
         },
     }
 }
@@ -52,5 +52,5 @@ const outputFile = './swagger-output.json'
 const endpointsFiles = ['../index.js', '../controller/*.js']
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
-    require('./index')           // Your project's root file
+    require('../index')           // Your project's root file
 })

@@ -6,12 +6,14 @@ const logger = require("../logger/logger");
 async function showTask(req, res) {
     try {
         const user_id = req.user._id;
-        const allTask = await Task.find({ user_id });
+        const allTask = await Task.find({ user_id: user_id});
+
+
 
         if (allTask.length > 0) {
 
             // Cache data to redis...
-            client.set("allTask", JSON.stringify(allTask));
+            client.set(`${user_id}alltask`, JSON.stringify(allTask));
 
             logger.info("All task have been responded!");
             return res.status(200).send({ "Task": allTask });
@@ -28,6 +30,26 @@ async function showTask(req, res) {
 }
 
 async function createTask(req, res) {
+    /*  #swagger.auto = false
+
+           #swagger.path = 'auth/createtask'
+           #swagger.method = 'put'
+           #swagger.description = 'Endpoint added manually.'
+           #swagger.produces = ["application/json"]
+           #swagger.consumes = ["application/json"]
+       */
+
+    /*  #swagger.parameters['body'] = {
+            in: 'body',
+            description: 'Task description',
+            required: true,
+            schema: {
+                description: "any",
+                completed: false
+            }
+        }
+    */
+
     try {
         const task = new Task({
             ...req.body,
@@ -36,8 +58,8 @@ async function createTask(req, res) {
 
         await task.save();
 
-        logger.info("Seccussful created you task!");
-        return res.status(201).send({ message: "Seccussful created you task!" });
+        logger.info("Successfully created you task!");
+        return res.status(201).send({ message: "Successful created you task!" });
     }
     catch (err) {
         logger.error(err.message);
@@ -48,12 +70,13 @@ async function createTask(req, res) {
 async function taskWithId(req, res) {
     try {
         const id = req.params.id;
+        const user_id = req.user._id;
 
         const result = await Task.findById({ _id: new mongodb.ObjectId(id) });
         if (result) {
 
             // Cache data to redis...
-            client.set("taskWithId", JSON.stringify(result));
+            client.set(`${user_id}taskWithId`, JSON.stringify(result));
 
             return res.status(200).send({ "Task": result });
         }
@@ -176,7 +199,7 @@ async function getPendingTask(req, res) {
             })
 
             // Cache data to redis...
-            client.set("pendingTask", JSON.stringify(pendingTask));
+            client.set(`${user_id}pendingtask`, JSON.stringify(pendingTask));
 
             return res.status(200).send({ "pendingTask": pendingTask });
         }
@@ -207,7 +230,7 @@ async function getCompletedTask(req, res) {
             })
 
             // Cache data to redis...
-            client.set("completedTask", JSON.stringify(completedTask));
+            client.set(`${user_id}completedtask`, JSON.stringify(completedTask));
 
             return res.status(200).send({ "completedTask": completedTask });
         }
