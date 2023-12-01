@@ -34,8 +34,6 @@ auth_routes.get("/auth/profile", (req, res) => {
 
 auth_routes.get("/auth/logout", logOutReq);
 
-
-
 // ##### Task Routes #############
 auth_routes.get("/auth/showtask",
     showTaskCache,

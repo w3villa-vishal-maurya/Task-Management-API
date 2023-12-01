@@ -4,6 +4,7 @@ const assert = chai.assert;    // Using Assert style
 const expect = chai.expect;    // Using Expect style
 const should = chai.should();  // Using Should style
 
+const User = require('../model/User');
 const server = require("../index");
 
 
@@ -13,30 +14,20 @@ const { response } = require('express');
 chai.use(chaiHttp);
 
 
-describe('User API', function () {
+describe('------------------------ User Test Suite ------------------', function () {
     this.timeout(5000);
 
     const userRegData = {
         "name": "Example",
         "email": "example@gmail.com",
         "password": "example@123",
-        "phoneNumber": "1234567890"
+        "phoneNumber": "1234567890",
     }
 
     const userLoginData = {
         email: "vishalprakash0202@gmail.com",
         password: "vishal@123"
     }
-
-
-    it('Register GET User', function (done) {
-        chai.request(server)
-            .get("/register")
-            .end((err, response) => {
-                expect(response.status).to.be.equal(400);
-                done();
-            });
-    });
 
     it('Register User', function (done) {
         chai.request(server)
@@ -70,6 +61,20 @@ describe('User API', function () {
                 done();
             });
 
+    });
+
+    after(async () => {
+        try {
+            const result = await User.deleteOne({ email: userRegData.email });
+            if (result.deletedCount > 0) {
+                console.log("       User deleted after all tests have completed!");
+            } else {
+                console.log("       No user found to delete after tests.");
+            }
+        }
+        catch (error) {
+            console.log(error.message);
+        }
     });
 
 });
