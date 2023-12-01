@@ -1,0 +1,5 @@
+[info] Server is started running, You are listening the port: 3000, 2023-12-01 18:01:45 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-01 18:01:45 
+[info] Connected to the redis server, 2023-12-01 18:01:45 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-01 18:01:46 
