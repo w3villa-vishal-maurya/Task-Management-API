@@ -36,6 +36,7 @@ app.use(bodyParser.json());
 app.use("/user", session({ secret: "secret", resave: true, saveUninitialized: true }));
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use("/user/auth/*", verifyJWT);
+app.set('trust proxy', 1);
 
 // Use of all Routes
 app.use("/", public_routes);
