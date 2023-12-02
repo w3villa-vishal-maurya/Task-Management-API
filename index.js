@@ -40,7 +40,7 @@ const app = express();
 connectionConfig();
 
 //  Use of all middleweres
-app.user(cors());
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use("/user", session({ secret: "secret", resave: true, saveUninitialized: true }));
