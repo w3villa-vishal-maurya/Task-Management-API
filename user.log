@@ -28,3 +28,26 @@ API documentation: http://localhost:3000/doc, 2023-12-02 12:44:53
 API documentation: http://localhost:3000/doc, 2023-12-02 12:45:55 
 [info] Connected to the redis server, 2023-12-02 12:45:55 
 [info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-02 12:45:56 
+[info] Server is started running, You are listening the port: 10000, 2023-12-02 14:24:35 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-02 14:24:35 
+[info] Connected to the redis server, 2023-12-02 14:24:35 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-12-02 14:24:36 
+[info] Server is started running, You are listening the port: 10000, 2023-12-02 14:25:40 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-02 14:25:40 
+[info] Connected to the redis server, 2023-12-02 14:25:40 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-12-02 14:25:41 
+[error] Wrong Credentials!!!, 2023-12-02 14:26:03 
+[info] You have no any current Task!, 2023-12-02 14:27:10 
+[info] Server is started running, You are listening the port: 10000, 2023-12-02 14:30:34 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-02 14:30:34 
+[info] Connected to the redis server, 2023-12-02 14:30:34 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-01.lq7uklz.mongodb.net, 2023-12-02 14:30:35 
+[info] Server is started running, You are listening the port: 10000, 2023-12-02 14:30:44 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-02 14:30:44 
+[info] Connected to the redis server, 2023-12-02 14:30:44 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-02 14:30:44 
+[info] You have no any current Task!, 2023-12-02 14:31:08 
