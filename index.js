@@ -25,6 +25,14 @@ const logger = require("./logger/logger");
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger/swagger-output.json')
 
+
+
+// Add the global unhandled rejection handler
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+    // Additional logging or error handling can be added here
+});
+
 const PORT = 3000;
 const app = express();
 
