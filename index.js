@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors')
 
 // Database connection and model path
 const connectionConfig = require("./db/connection");
@@ -39,6 +40,7 @@ const app = express();
 connectionConfig();
 
 //  Use of all middleweres
+app.user(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 app.use("/user", session({ secret: "secret", resave: true, saveUninitialized: true }));
