@@ -33,7 +33,7 @@ process.on('unhandledRejection', (reason, promise) => {
     // Additional logging or error handling can be added here
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 connectionConfig();
