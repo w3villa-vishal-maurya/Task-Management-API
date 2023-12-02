@@ -13,7 +13,7 @@ async function showTask(req, res) {
         if (allTask.length > 0) {
 
             // Cache data to redis...
-            client.set(`${user_id}alltask`, JSON.stringify(allTask));
+            // client.set(`${user_id}alltask`, JSON.stringify(allTask));
 
             logger.info("All task have been responded!");
             return res.status(200).send({ "Task": allTask });

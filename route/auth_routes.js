@@ -38,7 +38,7 @@ auth_routes.get("/auth/logout", logOutReq);
 // ##### Task Routes #############
 
 auth_routes.get("/auth/showtask",
-    showTaskCache,
+    // showTaskCache,
     showTask);
 
 auth_routes.post("/auth/createtask",
