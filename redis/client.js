@@ -2,7 +2,7 @@ const redis = require("redis");
 const logger = require("../logger/logger");
 
 const REDIS_PORT = process.env.REDIS_PORT || 6379;
-const REDIS_HOST = process.env.REDIS_HOST;
+const REDIS_HOST = "103.217.132.19" || process.env.REDIS_HOST;
 
 const client = redis.createClient({
   host: REDIS_HOST,
