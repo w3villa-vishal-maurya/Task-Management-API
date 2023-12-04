@@ -1,6 +1,6 @@
 const Task = require("../model/Task")
 const mongodb = require("mongodb");
-const client = require("../redis/client");
+// const client = require("../redis/client");
 const logger = require("../logger/logger");
 
 async function showTask(req, res) {
@@ -76,7 +76,7 @@ async function taskWithId(req, res) {
         if (result) {
 
             // Cache data to redis...
-            client.set(`${user_id}taskWithId`, JSON.stringify(result));
+            // client.set(`${user_id}taskWithId`, JSON.stringify(result));
 
             return res.status(200).send({ "Task": result });
         }
@@ -199,7 +199,7 @@ async function getPendingTask(req, res) {
             })
 
             // Cache data to redis...
-            client.set(`${user_id}pendingtask`, JSON.stringify(pendingTask));
+            // client.set(`${user_id}pendingtask`, JSON.stringify(pendingTask));
 
             return res.status(200).send({ "pendingTask": pendingTask });
         }
@@ -230,7 +230,7 @@ async function getCompletedTask(req, res) {
             })
 
             // Cache data to redis...
-            client.set(`${user_id}completedtask`, JSON.stringify(completedTask));
+            // client.set(`${user_id}completedtask`, JSON.stringify(completedTask));
 
             return res.status(200).send({ "completedTask": completedTask });
         }

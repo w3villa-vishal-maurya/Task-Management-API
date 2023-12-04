@@ -47,16 +47,16 @@ auth_routes.post("/auth/createtask",
 );
 
 auth_routes.get("/auth/task/:id",
-    taskWithIdCache,
+    // taskWithIdCache,
     taskWithId);
 
 
 auth_routes.get("/auth/pendingtask",
-    getPendingTaskCache,
+    // getPendingTaskCache,
     getPendingTask);
 
 auth_routes.get("/auth/completedtask",
-    getCompletedTaskCache,
+    // getCompletedTaskCache,
     getCompletedTask);
 
 auth_routes.put("/auth/update/:id",
