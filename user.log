@@ -268,3 +268,130 @@ API documentation: http://localhost:3000/doc, 2023-12-04 11:20:51
 [info] Server is running!
 API documentation: http://localhost:3000/doc, 2023-12-04 11:23:23 
 [info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 11:23:24 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 12:56:41 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 12:56:41 
+[info] Connected to the redis server, 2023-12-04 12:56:41 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 12:56:44 
+[error] User is not Registered!, 2023-12-04 12:57:09 
+[error] User already exists!!, 2023-12-04 12:58:12 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:00:03 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:00:03 
+[info] Connected to the redis server, 2023-12-04 13:00:03 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 13:00:04 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:03:23 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:03:23 
+[info] Connected to the redis server, 2023-12-04 13:03:23 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 13:03:24 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:03:27 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:03:27 
+[info] Connected to the redis server, 2023-12-04 13:03:27 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:03:27 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:03:40 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:03:40 
+[info] Connected to the redis server, 2023-12-04 13:03:40 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:03:41 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:10:02 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:10:02 
+[info] Connected to the redis server, 2023-12-04 13:10:02 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 13:10:03 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:10:51 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:10:51 
+[info] Connected to the redis server, 2023-12-04 13:10:51 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:10:52 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:10:56 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:10:56 
+[info] Connected to the redis server, 2023-12-04 13:10:56 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:10:58 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:10:58 
+[info] Connected to the redis server, 2023-12-04 13:10:58 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:10:59 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:11:00 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:11:00 
+[info] Connected to the redis server, 2023-12-04 13:11:00 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:11:02 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:11:05 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:11:05 
+[info] Connected to the redis server, 2023-12-04 13:11:05 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 13:11:06 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:11:13 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:11:13 
+[info] Connected to the redis server, 2023-12-04 13:11:13 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:11:13 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:11:25 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:11:25 
+[info] Connected to the redis server, 2023-12-04 13:11:25 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:11:27 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:11:27 
+[info] Connected to the redis server, 2023-12-04 13:11:27 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:11:28 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:12:27 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:12:27 
+[info] Connected to the redis server, 2023-12-04 13:12:27 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 13:12:28 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:12:31 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:12:31 
+[info] Connected to the redis server, 2023-12-04 13:12:31 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:12:34 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:12:34 
+[info] Connected to the redis server, 2023-12-04 13:12:34 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:12:36 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:12:39 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:12:39 
+[info] Connected to the redis server, 2023-12-04 13:12:39 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:12:40 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:12:56 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:12:56 
+[info] Connected to the redis server, 2023-12-04 13:12:56 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:12:56 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:13:03 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:13:03 
+[info] Connected to the redis server, 2023-12-04 13:13:03 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:14:09 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:14:09 
+[info] Connected to the redis server, 2023-12-04 13:14:09 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-04 13:14:09 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:14:34 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:14:34 
+[info] Connected to the redis server, 2023-12-04 13:14:34 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:14:35 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:14:47 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:14:47 
+[info] Connected to the redis server, 2023-12-04 13:14:47 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:14:48 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:14:53 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:14:53 
+[info] Connected to the redis server, 2023-12-04 13:14:53 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:14:54 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:14:58 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:14:58 
+[info] Connected to the redis server, 2023-12-04 13:14:58 
+[info] Server is started running, You are listening the port: 10000, 2023-12-04 13:15:00 
+[info] Server is running!
+API documentation: http://localhost:3000/doc, 2023-12-04 13:15:00 
+[info] Connected to the redis server, 2023-12-04 13:15:00 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-04 13:15:00 

@@ -103,22 +103,24 @@ const sendResetPasswordMail = async (name, email, token) => {
             requireTLS: true,
             auth: {
                 // TODO: replace `user` and `pass` values from <https://forwardemail.net>
-                user: 'vishalprakash.maurya@w3villa.com',
-                pass: 'vishal@123'
+                user: process.env.HOST_EMAIL,
+                pass: process.env.HOST_PASS
             }
         });
 
+        // html: `<p> hi ${name}, Please copy the link <a href="http://127.0.0.1:3000/reset-password/${token}">Reset your password!</a>`
+        // Change reset-password url for production level 
         const mailOptions = {
             from: "vishalprakash.maurya@w3villa.com",
             to: email,
             subject: "For Reset password",
-            html: `<p> hi ${name}, Please copy the link <a href="http://127.0.0.1:3000/reset-password/${token}">Reset your password!</a>`
+            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-wrqg.onrender.com/reset-password/${token}">Reset your password!</a> OR For the documentation level password-reset required token: ${token} </p>`,
         }
 
 
         transporter.sendMail(mailOptions, (err, info) => {
             if (err) {
-               throw new Error(err);
+                throw new Error(err);
             }
             // else {
             //     console.log("eMail has been sent:- ", info.response);
@@ -166,7 +168,7 @@ async function resetPassword(req, res) {
             const salt = bcrypt.genSaltSync(10);
             const hashPassword = bcrypt.hashSync(req.body.password, salt);
 
-            const data = await User.updateOne({ token: token }, { $set: { password: hashPassword, token: null} });
+            const data = await User.updateOne({ token: token }, { $set: { password: hashPassword, token: null } });
             return res.status(200).json({ title: "Successful", message: JSON.stringify(data) });
         }
         else {
