@@ -45,9 +45,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "403": {
-            "description": "Forbidden"
           }
         }
       }
@@ -82,9 +79,6 @@
           "200": {
             "description": "OK"
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "404": {
             "description": "Not Found"
           },
@@ -117,9 +111,6 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "403": {
-            "description": "Forbidden"
           }
         }
       }
@@ -153,27 +144,11 @@
           },
           "400": {
             "description": "Bad Request"
-          },
-          "403": {
-            "description": "Forbidden"
           }
         }
       }
     },
-    "/user/auth/profile": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "403": {
-            "description": "Forbidden"
-          }
-        }
-      }
-    },
-    "/user/login": {
+    "/login": {
       "post": {
         "description": "",
         "parameters": [
@@ -197,16 +172,13 @@
           "200": {
             "description": "OK"
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "500": {
             "description": "Internal Server Error"
           }
         }
       }
     },
-    "/user/auth/logout": {
+    "/profile": {
       "get": {
         "description": "",
         "responses": {
@@ -219,7 +191,20 @@
         }
       }
     },
-    "/user/auth/showtask": {
+    "/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/task/showall": {
       "get": {
         "description": "",
         "responses": {
@@ -231,14 +216,11 @@
           },
           "403": {
             "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/user/auth/createtask": {
+    "/task/createnew": {
       "post": {
         "description": "Endpoint added manually.",
         "consumes": [
@@ -275,7 +257,36 @@
         }
       }
     },
-    "/user/auth/task/{id}": {
+    "/task/pending": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/task/complete": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        }
+      }
+    },
+    "/task/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -298,46 +309,9 @@
           },
           "404": {
             "description": "Not Found"
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
-      }
-    },
-    "/user/auth/pendingtask": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/user/auth/completedtask": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/user/auth/update/{id}": {
+      },
       "put": {
         "description": "Endpoint added manually.",
         "consumes": [
@@ -379,9 +353,7 @@
             "description": "Forbidden"
           }
         }
-      }
-    },
-    "/user/auth/delete/{id}": {
+      },
       "delete": {
         "description": "",
         "parameters": [
@@ -422,7 +394,7 @@
         },
         "phoneNumber": {
           "type": "string",
-          "example": "Password@123"
+          "example": "12345678990"
         }
       }
     },
@@ -432,6 +404,10 @@
         "description": {
           "type": "string",
           "example": "Task description"
+        },
+        "user_id": {
+          "type": "string",
+          "example": "ref of user id"
         },
         "completed": {
           "type": "boolean",

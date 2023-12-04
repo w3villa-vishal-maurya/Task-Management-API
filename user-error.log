@@ -4,3 +4,97 @@
 [error] Wrong Credentials!!!, 2023-12-02 14:26:03 
 [error] User is not Registered!, 2023-12-04 12:57:09 
 [error] User already exists!!, 2023-12-04 12:58:12 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-04 23:37:03 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-04 23:46:54 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:07:23 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:07:38 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:18:41 
+[error] User is not Registered!, 2023-12-05 00:20:44 
+[error] User is not Registered!, 2023-12-05 00:22:04 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:24:49 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:24:54 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:25:20 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:29:41 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:30:24 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:31:02 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:32:09 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:33:06 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:33:55 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 00:34:20 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:25:16 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:26:08 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:27:05 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:33:23 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:35:57 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:39:42 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:43:28 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:47:23 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:48:56 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:53:53 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:54:26 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:54:27 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:54:28 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:54:28 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:54:28 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:56:53 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:57:37 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 01:59:29 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 02:00:06 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 02:00:14 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 02:00:50 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:03:11 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 02:04:01 
+[error] Cannot set properties of undefined (setting 'autherization'), 2023-12-05 02:04:03 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:08:11 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:08:19 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:09:01 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:09:30 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:10:21 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:10:56 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:12:34 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:14:00 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:15:31 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:16:49 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:17:23 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:18:59 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:21:21 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:27:30 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:27:45 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:28:12 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:28:39 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:28:45 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:29:45 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:29:51 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:30:00 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:30:41 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:30:49 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:32:07 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:32:24 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:32:26 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:32:34 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:32:35 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:34:05 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:35:03 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:35:09 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:35:50 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:36:35 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:36:38 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:36:54 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:37:04 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:37:40 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:37:49 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:39:52 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:44:03 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:44:30 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:45:33 
+[error] Cannot read properties of undefined (reading '_id'), 2023-12-05 02:45:55 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:52:30 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:53:04 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:53:07 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:53:10 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:53:11 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:53:14 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:54:24 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:54:42 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-05 02:55:28 
+[error] User is not Registered!, 2023-12-05 03:05:58 

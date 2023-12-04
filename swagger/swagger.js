@@ -40,11 +40,12 @@ const doc = {
             email: "example@gmail.com",
             password: "Password@123",
             confirmPassword: "Password@123",
-            phoneNumber: "Password@123",
+            phoneNumber: "12345678990",
         },
         Task: {
             description: "Task description",
-            completed: false,
+            user_id: "ref of user id",
+            completed: false
         },
     }
 }

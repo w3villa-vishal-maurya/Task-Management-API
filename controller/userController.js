@@ -60,6 +60,7 @@ async function loginReq(req, res) {
                 req.session.autherization = {
                     accessToken, user
                 };
+                
                 return res.status(200).json({
                     "data": {
                         "accessToken": accessToken

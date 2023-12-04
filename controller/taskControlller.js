@@ -87,7 +87,7 @@ async function taskWithId(req, res) {
     }
     catch (error) {
         logger.error(error.message);
-        return res.status(400).send({ error: error.message });
+        return res.status(400).send({ error: `Invalid Id, ${error.message}` });
     }
 }
 
@@ -186,15 +186,16 @@ async function deleteTask(req, res) {
 async function getPendingTask(req, res) {
     try {
         const user_id = req.user._id;
-
-        const allTask = await Task.find({ user_id: user_id });
-
+        
+        const allTask = await Task.find({ user_id });
+        
+        
         if (allTask) {
             const pendingTask = allTask.filter((task) => {
-                if (task.createdAt === task.updatedAt && !task.completed) {
+                if (!task.completed) {
                     return true;
                 }
-
+                
                 return false;
             })
 
@@ -209,12 +210,12 @@ async function getPendingTask(req, res) {
 
     }
     catch (err) {
-        return res.status(200).send({ error: err.message });
+        return res.status(500).send({ error: err.message });
     }
 }
 
 
-async function getCompletedTask(req, res) {
+async function  getCompletedTask(req, res) {
     try {
         const user_id = req.user._id;
 

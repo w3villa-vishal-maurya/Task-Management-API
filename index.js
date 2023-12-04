@@ -14,7 +14,7 @@ const public_routes = require("./route/public_routes");
 const auth_routes = require("./route/auth_routes");
 const badReq = require("./route/badRoute");
 
-// Middlewere
+// Autherization Middleware
 const { verifyJWT } = require("./middleware/validation");
 
 
@@ -43,21 +43,21 @@ connectionConfig();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use("/user", session({ secret: "secret", resave: true, saveUninitialized: true }));
+app.use( session({ secret: "secret", resave: true, saveUninitialized: true }));
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
-app.use("/user/auth/*", verifyJWT);
+// app.use("/user/auth/*", verifyJWT);
 app.set('trust proxy', 1);
 
 // Use of all Routes
 app.use("/", public_routes);
-app.use("/user", auth_routes);
+app.use("/task", auth_routes);
 app.use("/*", badReq);
 
 // Connectiong to the server
 app.listen(PORT, () => {
     // console.log("You are listening the port: ", PORT);
     logger.info(`Server is started running, You are listening the port: ${PORT}`);
-    logger.info(`Server is running!\nAPI documentation: http://localhost:3000/doc`)
+    logger.info(`Server is running!\nAPI documentation: http://localhost:10000/doc`)
 })
 
 module.exports = app;
