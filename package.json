@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon index.js",
     "start-gendoc": "node ./swagger/swagger.js",
-    "test": "mocha"
+    "test": "mocha",
+    "redis": "redis-server"
   },
   "keywords": [],
   "author": "",
