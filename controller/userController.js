@@ -169,7 +169,7 @@ async function resetPassword(req, res) {
             const hashPassword = bcrypt.hashSync(req.body.password, salt);
 
             const data = await User.updateOne({ token: token }, { $set: { password: hashPassword, token: null } });
-            return res.status(200).json({ title: "Successful", message: JSON.stringify(data) });
+            return res.status(200).json({ title: "Successful", message: "Password has been Successfully Updated!!" });
         }
         else {
             throw new Error("User is not found! Generated Token expired or invalid!");
