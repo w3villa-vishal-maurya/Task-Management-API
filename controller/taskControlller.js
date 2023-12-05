@@ -72,8 +72,8 @@ async function taskWithId(req, res) {
         const id = req.params.id;
         const user_id = req.user._id;
 
-        const result = await Task.findById({ _id: new mongodb.ObjectId(id) });
-        if (result) {
+        const result = await Task.find({ _id: new mongodb.ObjectId(id) , user_id: user_id});
+        if (result.length > 0) {
 
             // Cache data to redis...
             // client.set(`${user_id}taskWithId`, JSON.stringify(result));
@@ -81,7 +81,7 @@ async function taskWithId(req, res) {
             return res.status(200).send({ "Task": result });
         }
         else {
-            return res.status(404).send({ "error": "Record not found!" });
+            return res.status(404).send({ "error": "Invalid id, Record not found!" });
 
         }
     }

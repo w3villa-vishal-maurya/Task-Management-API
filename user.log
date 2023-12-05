@@ -1278,3 +1278,36 @@ API documentation: http://localhost:10000/doc, 2023-12-05 03:18:30
 [info] Server is running!
 API documentation: http://localhost:10000/doc, 2023-12-05 03:18:33 
 [info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-05 03:18:37 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:30:54 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:30:54 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-05 10:30:55 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:33:57 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:33:57 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-05 10:33:57 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:34:04 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:34:04 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-05 10:34:04 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:36:53 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:36:53 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-05 10:36:55 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:36:57 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:36:57 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-05 10:36:57 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:38:31 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:38:31 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-05 10:38:31 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:44:44 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:44:44 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-05 10:44:44 
+[info] Server is started running, You are listening the port: 10000, 2023-12-05 10:44:56 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-05 10:44:56 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-02.lq7uklz.mongodb.net, 2023-12-05 10:44:57 
+[info] User Successfully registered!! You can login!, 2023-12-05 10:46:41 

@@ -9,7 +9,7 @@ const doc = {
     },
     host: process.env.SERVER_HOST,
     basePath: "/",
-    schemes: ['http', 'https'],
+    schemes: ['https'],
     consumes: ['application/json'],
     produces: ['application/json'],
     tags: [
@@ -39,12 +39,11 @@ const doc = {
             name: "exampleUser",
             email: "example@gmail.com",
             password: "Password@123",
-            confirmPassword: "Password@123",
             phoneNumber: "12345678990",
         },
         Task: {
             description: "Task description",
-            user_id: "ref of user id",
+            user_id: "ref of user id(referenced from login user)",
             completed: false
         },
     }

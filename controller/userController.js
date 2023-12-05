@@ -95,7 +95,7 @@ function logOutReq(req, res) {
 }
 
 
-const sendResetPasswordMail = async (name, email, token) => {
+const sendResetPasswordMail = async (name, email, passResetToken) => {
     try {
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
@@ -115,7 +115,7 @@ const sendResetPasswordMail = async (name, email, token) => {
             from: "vishalprakash.maurya@w3villa.com",
             to: email,
             subject: "For Reset password",
-            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-wrqg.onrender.com/reset-password/${token}">Reset your password!</a> OR For the documentation level password-reset required token: ${token} </p>`,
+            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-wrqg.onrender.com/reset-password/${passResetToken}">Reset your password!</a> OR For the documentation level password-reset required token: ${passResetToken} </p>`,
         }
 
 
@@ -142,8 +142,8 @@ async function forgetPassword(req, res) {
         const user = await User.find({ email: email });
 
         if (user.length > 0) {
-            const token = randomstring.generate();
-            const data = await User.updateOne({ email: email }, { $set: { token: token } });
+            const passResetToken = randomstring.generate();
+            const data = await User.updateOne({ email: email }, { $set: { passResetToken: passResetToken } });
             await sendResetPasswordMail(user[0].name, user[0].email, token);
             return res.status(200).json({ title: "Successful", message: "Please check your mail!!" });
         }
@@ -160,8 +160,8 @@ async function forgetPassword(req, res) {
 
 async function resetPassword(req, res) {
     try {
-        const token = req.params.token;
-        const user = await User.find({ token: token });
+        const passResetToken = req.params.passResetToken;
+        const user = await User.find({ passResetToken: passResetToken });
 
         // 2a$10$rxcQ2WtyQkEC.HkponYqR.Q7P4yIGx5TGLVIEDfAc9qrVtlFb9gg2
 
@@ -169,7 +169,7 @@ async function resetPassword(req, res) {
             const salt = bcrypt.genSaltSync(10);
             const hashPassword = bcrypt.hashSync(req.body.password, salt);
 
-            const data = await User.updateOne({ token: token }, { $set: { password: hashPassword, token: null } });
+            const data = await User.updateOne({ passResetToken: passResetToken }, { $set: { password: hashPassword, token: null } });
             return res.status(200).json({ title: "Successful", message: "Password has been Successfully Updated!!" });
         }
         else {

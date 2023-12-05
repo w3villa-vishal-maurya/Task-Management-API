@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     phoneNumber: {
         type: String
     },
-    token:{
+    passResetToken:{
         type: String,
         default: null
     }

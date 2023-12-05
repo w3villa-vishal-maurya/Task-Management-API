@@ -13,7 +13,6 @@
     }
   ],
   "schemes": [
-    "http",
     "https"
   ],
   "securityDefinitions": {
@@ -388,10 +387,6 @@
           "type": "string",
           "example": "Password@123"
         },
-        "confirmPassword": {
-          "type": "string",
-          "example": "Password@123"
-        },
         "phoneNumber": {
           "type": "string",
           "example": "12345678990"
@@ -407,7 +402,7 @@
         },
         "user_id": {
           "type": "string",
-          "example": "ref of user id"
+          "example": "ref of user id(referenced from login user)"
         },
         "completed": {
           "type": "boolean",
