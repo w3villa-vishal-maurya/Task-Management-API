@@ -43,7 +43,7 @@ connectionConfig();
 app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
-app.use( session({ secret: "secret", resave: true, saveUninitialized: true }));
+app.use( session({ secret: process.env.SECRET_KEY, resave: true, saveUninitialized: true }));
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 // app.use("/user/auth/*", verifyJWT);
 app.set('trust proxy', 1);
