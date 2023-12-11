@@ -13,7 +13,7 @@ async function regReq(req, res) {
         const { name, email, password, phoneNumber } = req.body;
         const result = validationResult(req);
         if (!result.isEmpty()) {
-            return res.send(result.array());
+            return res.status(400).send(result.array());
         }
 
         const salt = bcrypt.genSaltSync(10);
@@ -23,7 +23,7 @@ async function regReq(req, res) {
 
         if (!user.length == 0) {
             logger.error("User already exists!!");
-            return res.status(404).json({ message: "User already exists!!!" });
+            return res.status(409).json({ message: "User already exists!!!" });
         }
 
         const newUser = await User.create(
@@ -69,11 +69,11 @@ async function loginReq(req, res) {
                 });
             }
             else {
-                throw new Error("Wrong Credentials!!!");
+                return res.status(400).json({ error:  "Wrong Credentials!!!"});
             }
         }
         else {
-            throw new Error("User is not Registered!");
+            return res.status(401).json({ error:  "User is not Registered!"});
         }
     }
     catch (error) {
@@ -123,9 +123,7 @@ const sendResetPasswordMail = async (name, email, passResetToken) => {
             if (err) {
                 throw new Error(err);
             }
-            // else {
-            //     console.log("eMail has been sent:- ", info.response);
-            // }
+    
         })
     }
     catch {

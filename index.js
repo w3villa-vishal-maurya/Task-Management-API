@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require('cors')
 
+
 // Database connection and model path
 const connectionConfig = require("./db/connection");
 const User = require("./model/User");
@@ -37,20 +38,23 @@ process.on('unhandledRejection', (reason, promise) => {
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+
 connectionConfig();
 
 //  Use of all middleweres
-app.use(cors());
 app.use(express.json());
-app.use(bodyParser.json());
+app.use(cors());
 app.use( session({ secret: process.env.SECRET_KEY, resave: true, saveUninitialized: true }));
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 // app.use("/user/auth/*", verifyJWT);
 app.set('trust proxy', 1);
 
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // Use of all Routes
-app.use("/", public_routes);
 app.use("/task", auth_routes);
+app.use("/", public_routes);
 app.use("/*", badReq);
 
 // Connectiong to the server

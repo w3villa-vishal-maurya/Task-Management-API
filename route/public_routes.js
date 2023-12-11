@@ -1,7 +1,7 @@
 const public_routes = require("express").Router();
 const { regReq, loginReq, logOutReq, forgetPassword, resetPassword } = require("../controller/userController");
 const { regValidator, loginValidator } = require("../middleware/validation");
-
+const User = require("../model/User")
 
 
 // Autherization Middleware
@@ -33,10 +33,22 @@ public_routes.post("/login",
 public_routes.use(verifyJWT);
 
 
+
 // ##### User Credentials Routes #############
 public_routes.get("/profile",
-    (req, res) => {
-        return res.status(200).send(req.session.autherization["user"]);
+    async(req, res) => {
+        // return res.status(200).send({"profile":req.user});
+
+        try {
+            const _id = req.user._id;
+
+            const user = await User.find({ _id });
+            return res.status(200).send({"profile":user});
+
+        }
+        catch (err) {
+            return res.status(500).send({ error: err.message });
+        }
     })
 
 

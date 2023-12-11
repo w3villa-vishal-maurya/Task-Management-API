@@ -31,7 +31,8 @@ const taskValidator = [
 ]
 
 function verifyJWT(req, res, next) {
-    if (req.session.autherization || req.header('Authorization')) {
+    // if (req.session.autherization || req.header('Authorization')) {
+    if (req.header('Authorization')) {
         token = req.header('Authorization') ? req.header('Authorization') : req.session.autherization["accessToken"];
         jwt.verify(token, process.env.SECRET_KEY, (err, user) => {
             if (!err) {
@@ -39,7 +40,7 @@ function verifyJWT(req, res, next) {
                 next();
             }
             else {
-                return res.status(403).json({ message: "User is not authorized" });
+                return res.status(401).json({ message: "User is not authorized" });
             }
         })
     }

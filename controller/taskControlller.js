@@ -162,12 +162,12 @@ async function deleteTask(req, res) {
         if (result.deletedCount != 0) {
             res.statusCode = 200;
             logger.info("Task has been deleted from database!");
-            res.write(JSON.stringify({ title: "Successfull", mesage: "Task has been removed!" }));
+            res.write(JSON.stringify({ title: "Successfull", message: "Task has been removed!" }));
             res.end();
         }
         else {
             res.statusCode = 400;
-            res.write(JSON.stringify({ title: "Successfull", mesage: "Task not found!" }));
+            res.write(JSON.stringify({ title: "Successfull", message: "Task not found!" }));
             res.end();
         }
     }
