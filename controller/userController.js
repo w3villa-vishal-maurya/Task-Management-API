@@ -57,9 +57,9 @@ async function loginReq(req, res) {
                     _id: user._id
                 }, process.env.SECRET_KEY, { expiresIn: 60 * 60 });
 
-                req.session.autherization = {
-                    accessToken, user
-                };
+                // req.session.autherization = {
+                //     accessToken, user
+                // };
                 
                 return res.status(200).json({
                     "data": {
