@@ -60,7 +60,7 @@ async function loginReq(req, res) {
                 // req.session.autherization = {
                 //     accessToken, user
                 // };
-                
+
                 return res.status(200).json({
                     "data": {
                         "accessToken": accessToken
@@ -69,11 +69,11 @@ async function loginReq(req, res) {
                 });
             }
             else {
-                return res.status(400).json({ error:  "Wrong Credentials!!!"});
+                return res.status(400).json({ error: "Wrong Credentials!!!" });
             }
         }
         else {
-            return res.status(401).json({ error:  "User is not Registered!"});
+            return res.status(401).json({ error: "User is not Registered!" });
         }
     }
     catch (error) {
@@ -121,14 +121,18 @@ const sendResetPasswordMail = async (name, email, passResetToken) => {
 
         transporter.sendMail(mailOptions, (err, info) => {
             if (err) {
-                throw new Error(err);
+                console.log({ "err1": err });
+                return false;
             }
-    
+
         })
+
+        return true;
     }
     catch {
         (error) => {
-            res.status(400).send({ message: error.message });
+            console.log({ "err2": error });
+            return false;
         }
     }
 }
@@ -138,15 +142,19 @@ async function forgetPassword(req, res) {
     try {
         const email = req.body.email;
         const user = await User.find({ email: email });
-
         if (user.length > 0) {
             const passResetToken = randomstring.generate();
             const data = await User.updateOne({ email: email }, { $set: { passResetToken: passResetToken } });
-            await sendResetPasswordMail(user[0].name, user[0].email, token);
-            return res.status(200).json({ title: "Successful", message: "Please check your mail!!" });
+            const isSendEmail = await sendResetPasswordMail(user[0].name, user[0].email, passResetToken);
+            if (isSendEmail) {
+                return res.status(200).json({ title: "Successful", message: "Please check your mail!!" });
+            }
+            else{
+                return res.status(400).json({ title: "Unsuccessful", message: "Internal error Occured!!" });
+            }
         }
         else {
-            throw new Error("User is not found!");
+            return res.status(400).json({ title: "Unsuccessful", message: "User is not found!" });
         }
     }
     catch (error) {
