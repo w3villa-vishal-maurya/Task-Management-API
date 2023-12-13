@@ -147,7 +147,7 @@ async function forgetPassword(req, res) {
             const data = await User.updateOne({ email: email }, { $set: { passResetToken: passResetToken } });
             const isSendEmail = await sendResetPasswordMail(user[0].name, user[0].email, passResetToken);
             if (isSendEmail) {
-                return res.status(200).json({ title: "Successful", message: "Please check your mail!!" });
+                return res.status(200).json({ title: "Successful", message: "Please check your mail!!", "passResetToken": passResetToken });
             }
             else{
                 return res.status(400).json({ title: "Unsuccessful", message: "Internal error Occured!!" });
