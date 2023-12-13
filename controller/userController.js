@@ -115,13 +115,15 @@ const sendResetPasswordMail = async (name, email, passResetToken) => {
             from: "vishalprakash.maurya@w3villa.com",
             to: email,
             subject: "For Reset password",
-            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-wrqg.onrender.com/reset-password/${passResetToken}">Reset your password!</a> OR For the documentation level password-reset required token: ${passResetToken} </p>`,
+            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-wrqg.onrender.com/reset-password/${passResetToken}">Reset your password!</a>
+             OR 
+             If you are requesting from App then click here <a href="https://task-management-sqfi.onrender.com/reset-password/${passResetToken}">Reset your password!</a>
+             `,
         }
 
 
         transporter.sendMail(mailOptions, (err, info) => {
             if (err) {
-                console.log({ "err1": err });
                 return false;
             }
 
@@ -131,7 +133,6 @@ const sendResetPasswordMail = async (name, email, passResetToken) => {
     }
     catch {
         (error) => {
-            console.log({ "err2": error });
             return false;
         }
     }
@@ -147,14 +148,14 @@ async function forgetPassword(req, res) {
             const data = await User.updateOne({ email: email }, { $set: { passResetToken: passResetToken } });
             const isSendEmail = await sendResetPasswordMail(user[0].name, user[0].email, passResetToken);
             if (isSendEmail) {
-                return res.status(200).json({ title: "Successful", message: "Please check your mail!!", "passResetToken": passResetToken });
+                return res.status(201).json({ title: "Successful", message: "Please check your mail!!", "passResetToken": passResetToken });
             }
             else{
                 return res.status(400).json({ title: "Unsuccessful", message: "Internal error Occured!!" });
             }
         }
         else {
-            return res.status(400).json({ title: "Unsuccessful", message: "User is not found!" });
+            return res.status(200).json({ title: "Unsuccessful", message: "User is not registred!" });
         }
     }
     catch (error) {
@@ -166,7 +167,7 @@ async function forgetPassword(req, res) {
 
 async function resetPassword(req, res) {
     try {
-        const passResetToken = req.params.passResetToken;
+        const passResetToken = req.params.token;
         const user = await User.find({ passResetToken: passResetToken });
 
         // 2a$10$rxcQ2WtyQkEC.HkponYqR.Q7P4yIGx5TGLVIEDfAc9qrVtlFb9gg2
@@ -175,11 +176,11 @@ async function resetPassword(req, res) {
             const salt = bcrypt.genSaltSync(10);
             const hashPassword = bcrypt.hashSync(req.body.password, salt);
 
-            const data = await User.updateOne({ passResetToken: passResetToken }, { $set: { password: hashPassword, token: null } });
-            return res.status(200).json({ title: "Successful", message: "Password has been Successfully Updated!!" });
+            const data = await User.updateOne({ passResetToken: passResetToken }, { $set: { password: hashPassword, passResetToken: null } });
+            return res.status(201).json({ title: "Successful", message: "Password has been Successfully Updated!!" });
         }
         else {
-            throw new Error("User is not found! Generated Token expired or invalid!");
+            return res.status(400).json({message:"Generated Token expired or invalid!"});
         }
     }
     catch (error) {
