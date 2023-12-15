@@ -115,9 +115,9 @@ const sendResetPasswordMail = async (name, email, passResetToken) => {
             from: "vishalprakash.maurya@w3villa.com",
             to: email,
             subject: "For Reset password",
-            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-wrqg.onrender.com/reset-password/${passResetToken}">Reset your password!</a>
+            html: `<p> hi ${name}, Please copy the link <a href="https://task-management-api-t9qy.onrender.com/reset-password/${passResetToken}">Reset your password!</a>
              OR 
-             If you are requesting from App then click here <a href="https://task-management-sqfi.onrender.com/reset-password/${passResetToken}">Reset your password!</a>
+             If you are requesting from App then click here <a href="https://task-ui-green.vercel.app/reset-password/${passResetToken}">Reset your password!</a>
              `,
         }
 
