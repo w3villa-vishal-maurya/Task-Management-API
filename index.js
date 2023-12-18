@@ -8,7 +8,7 @@ const User = require("./model/User");
 
 // express custom module
 const bodyParser = require("body-parser");
-const session = require("express-session");
+// const session = require("express-session");
 
 // Routers 
 const public_routes = require("./route/public_routes");
@@ -16,7 +16,7 @@ const auth_routes = require("./route/auth_routes");
 const badReq = require("./route/badRoute");
 
 // Autherization Middleware
-const { verifyJWT } = require("./middleware/validation");
+// const { verifyJWT } = require("./middleware/validation");
 
 
 
@@ -45,7 +45,7 @@ connectionConfig();
 app.use(express.json());
 app.use(cors());
 // app.use( session({ secret: process.env.SECRET_KEY, resave: true, saveUninitialized: true }));
-app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
+app.get('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 // app.use("/user/auth/*", verifyJWT);
 app.set('trust proxy', 1);
 
@@ -55,7 +55,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Use of all Routes
 app.use("/task", auth_routes);
 app.use("/", public_routes);
-app.use("/*", badReq);
+app.get("/*", badReq);
 
 // Connectiong to the server
 app.listen(PORT, () => {
