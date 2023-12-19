@@ -13,10 +13,12 @@ const bodyParser = require("body-parser");
 // Routers 
 const public_routes = require("./route/public_routes");
 const auth_routes = require("./route/auth_routes");
+const project_routes = require("./route/project_routes");
 const badReq = require("./route/badRoute");
 
 // Autherization Middleware
 // const { verifyJWT } = require("./middleware/validation");
+// const { restrict } = require("./middleware/validation");
 
 
 
@@ -53,6 +55,7 @@ app.set('trust proxy', 1);
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Use of all Routes
+app.use("/project", project_routes);
 app.use("/task", auth_routes);
 app.use("/", public_routes);
 app.get("/*", badReq);
