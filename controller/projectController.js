@@ -1,14 +1,8 @@
 const Project = require("../model/Project");
-const { validationResult } = require('express-validator');
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
-const randomstring = require("randomstring");
-const nodemailer = require("nodemailer");
 const logger = require("../logger/logger");
-const env = require("dotenv").config();
 const User = require("../model/User");
+const ProjectTask = require("../model/ProjectTask")
 const mongodb = require("mongodb");
-const { error } = require("winston");
 
 
 
@@ -49,7 +43,7 @@ async function addUserToProject(req, res) {
                 const result = await Project.findByIdAndUpdate(filter, update);
 
                 if (result) {
-                    // logger.info("Recored successfully has been updated!");
+                    // logger.info("Record successfully has been updated!");
                     res.status(201).json({ "message": "Project has been successfully added!" });
                 }
             }
@@ -82,35 +76,52 @@ async function addUserToProject(req, res) {
     }
 }
 
+async function createProjectTask(req, res) {
+    try {
+        // project_id
+        // description
+        // completed
 
-async function createTask(req, res) {
+        const { projectId, description } = req.body;
+        const project = await Project.findOne({ _id: new mongodb.ObjectId(projectId) });
 
+        if (project) {
+            const newProjectTask = await ProjectTask.create({ project_id: projectId, description: description })
+
+            return res.status(201).json({ message: "New project task has been declared !" });
+        }
+        else {
+            return res.status(404).json({ message: "Project not found At this Id!" });
+        }
+
+    }
+    catch (err) {
+        res.status(400).json({ message: err.message });
+    }
 }
 
-
 async function showAssignedProject(req, res) {
-
     try {
         const user_id = req.user._id
         const project = await Project.find({
-            users: { $elemMatch: {$eq: user_id} }
+            users: { $elemMatch: { $eq: user_id } }
         })
-        
+
         if (project.length) {
             res.status(200).json({ Projects: project });
         }
-        else{
-            res.status(200).json({message: "No any project assigned to you!"});
+        else {
+            res.status(200).json({ message: "No any project assigned to you!" });
         }
     }
     catch (err) {
-        res.status(400).json({message: err.message});
+        res.status(400).json({ message: err.message });
     }
 }
 
 module.exports = {
     createProject,
     addUserToProject,
-    createTask,
+    createProjectTask,
     showAssignedProject
 }
