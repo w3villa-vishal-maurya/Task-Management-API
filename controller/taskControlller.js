@@ -8,8 +8,6 @@ async function showTask(req, res) {
         const user_id = req.user._id;
         const allTask = await Task.find({ user_id: user_id});
 
-
-
         if (allTask.length > 0) {
 
             // Cache data to redis...
