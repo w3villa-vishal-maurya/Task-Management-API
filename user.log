@@ -1,4 +1,8 @@
-[info] Server is started running, You are listening the port: 10000, 2023-12-20 12:48:27 
+[info] Server is started running, You are listening the port: 10000, 2023-12-20 16:51:33 
 [info] Server is running!
-API documentation: http://localhost:10000/doc, 2023-12-20 12:48:27 
-[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-20 12:48:28 
+API documentation: http://localhost:10000/doc, 2023-12-20 16:51:33 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-20 16:51:36 
+[info] Server is started running, You are listening the port: 10000, 2023-12-20 16:53:25 
+[info] Server is running!
+API documentation: http://localhost:10000/doc, 2023-12-20 16:53:25 
+[info] Connect to mongoDb Server: ac-2zusv6v-shard-00-00.lq7uklz.mongodb.net, 2023-12-20 16:53:26 

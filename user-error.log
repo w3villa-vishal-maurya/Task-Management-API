@@ -4,3 +4,31 @@
 [error] token is not defined, 2023-12-13 23:30:45 
 [error] token is not defined, 2023-12-13 23:32:05 
 [error] token is not defined, 2023-12-13 23:32:54 
+[error] E11000 duplicate key error collection: taskDB.users index: email_1 dup key: { email: "vishalprakash0202@gmail.com" }, 2023-12-20 15:38:28 
+[error] E11000 duplicate key error collection: taskDB.users index: email_1 dup key: { email: "vishalprakash0202@gmail.com" }, 2023-12-20 15:39:38 
+[error] E11000 duplicate key error collection: taskDB.users index: email_1 dup key: { email: "vishalprakash0202@gmail.com" }, 2023-12-20 15:40:38 
+[error] User already exists!!, 2023-12-20 15:40:57 
+[error] Email already exists!, 2023-12-20 15:40:57 
+[error] Email already exists!!, 2023-12-20 15:45:39 
+[error] Email already exists!, 2023-12-20 15:45:39 
+[error] Email already exists!!, 2023-12-20 15:46:15 
+[error] Email already exists!, 2023-12-20 15:46:15 
+[error] Email already exists!!, 2023-12-20 15:58:11 
+[error] Email already exists!, 2023-12-20 15:58:11 
+[error] Email already exists!!, 2023-12-20 15:59:17 
+[error] Email already exists!, 2023-12-20 15:59:17 
+[error] Email already exists!!, 2023-12-20 16:00:05 
+[error] Email already exists!, 2023-12-20 16:00:05 
+[error] Email already exists!!, 2023-12-20 16:01:18 
+[error] Email already exists!, 2023-12-20 16:01:18 
+[error] Email already exists!!, 2023-12-20 16:02:43 
+[error] Email already exists!, 2023-12-20 16:02:43 
+[error] Email already exists!!, 2023-12-20 16:05:06 
+[error] Email already exists!, 2023-12-20 16:05:06 
+[error] User is not Registered!, 2023-12-20 16:10:46 
+[error] User is not Registered!, 2023-12-20 16:11:25 
+[error] User is not Registered!, 2023-12-20 16:12:06 
+[error] User is not Registered!, 2023-12-20 16:12:12 
+[error] User is not Registered!, 2023-12-20 16:12:14 
+[error] Wrong Credentials!!!, 2023-12-20 16:16:53 
+[error] User is not Registered!, 2023-12-20 16:17:08 
