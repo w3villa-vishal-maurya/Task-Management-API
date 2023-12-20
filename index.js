@@ -17,6 +17,7 @@ const badReq = require("./route/badRoute");
 
 // Autherization Middleware
 // const { verifyJWT } = require("./middleware/validation");
+const errorHandlerMiddleware = require("./middleware/error-handler");
 
 
 
@@ -55,7 +56,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Use of all Routes
 app.use("/task", auth_routes);
 app.use("/", public_routes);
-app.get("/*", badReq);
+// app.get("/*", badReq);
+
+// Error handler Middlewere
+app.use(errorHandlerMiddleware);
 
 // Connectiong to the server
 app.listen(PORT, () => {

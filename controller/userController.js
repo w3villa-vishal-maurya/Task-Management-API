@@ -1,4 +1,6 @@
 const User = require("../model/User");
+const { StatusCodes } = require("http-status-codes");
+const { BadRequestError, NotFoundError, UnauthenticatedError } = require("../error");
 const { validationResult } = require('express-validator');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
@@ -8,7 +10,7 @@ const logger = require("../logger/logger");
 const env = require("dotenv").config();
 
 
-async function regReq(req, res) {
+async function regReq(req, res, next) {
     try {
         const { name, email, password, phoneNumber } = req.body;
         const result = validationResult(req);
@@ -16,32 +18,38 @@ async function regReq(req, res) {
             return res.status(400).send(result.array());
         }
 
+
+        // genSalt for hash-password
         const salt = bcrypt.genSaltSync(10);
         const hashPassword = bcrypt.hashSync(password, salt);
 
-        const user = await User.find({ email: email });
+        const user = await User.findOne({ email: email });
 
-        if (!user.length == 0) {
-            logger.error("User already exists!!");
-            return res.status(409).json({ message: "User already exists!!!" });
+        if (user) {
+            logger.error("Email already exists!!");
+            throw new BadRequestError(
+                "Email already exists!"
+            );
         }
 
+        // Create new user
         const newUser = await User.create(
             { name: name, email, email, password: hashPassword, phoneNumber: phoneNumber }
         );
 
         logger.info("User Successfully registered!! You can login!");
-        return res.status(200).json({ message: "User Successfully registered!! You can login!" });
+        return res.status(StatusCodes.CREATED).json({ message: "User Successfully registered!! You can login!" });
     }
     catch (error) {
         logger.error(error.message);
-        return res.status(500).json({ error: error.message });
+        return next(error);
     }
 }
 
 
-async function loginReq(req, res) {
+async function loginReq(req, res, next) {
     try {
+
         const { email, password } = req.body;
         const result = validationResult(req);
         if (!result.isEmpty()) {
@@ -61,7 +69,7 @@ async function loginReq(req, res) {
                 //     accessToken, user
                 // };
 
-                return res.status(200).json({
+                return res.status(StatusCodes.OK).json({
                     "data": {
                         "accessToken": accessToken
                     },
@@ -69,20 +77,24 @@ async function loginReq(req, res) {
                 });
             }
             else {
-                return res.status(400).json({ error: "Wrong Credentials!!!" });
+                throw new BadRequestError(
+                    "Wrong Credentials!!!"
+                );
             }
         }
         else {
-            return res.status(401).json({ error: "User is not Registered!" });
+            throw new UnauthenticatedError(
+                "User is not Registered!"
+            );
         }
     }
     catch (error) {
         logger.error(error.message);
-        return res.status(500).json({ error: error.message });
+        return next(error);
     }
 }
 
-function logOutReq(req, res) {
+function logOutReq(req, res, next) {
     if (req.session.autherization["accessToken"]) {
         req.session.autherization["accessToken"] = null;
         logger.info("User logged Out!");
@@ -90,7 +102,7 @@ function logOutReq(req, res) {
     }
     else {
         logger.info("User is not loogged In, Login First");
-        return res.status(403).json({ message: "User is not loogged In, Login First" });
+        return res.status(StatusCodes.FORBIDDEN).json({ message: "User is not loogged In, Login First" });
     }
 }
 
@@ -139,10 +151,11 @@ const sendResetPasswordMail = async (name, email, passResetToken) => {
 }
 
 
-async function forgetPassword(req, res) {
+async function forgetPassword(req, res, next) {
     try {
         const email = req.body.email;
         const user = await User.find({ email: email });
+
         if (user.length > 0) {
             const passResetToken = randomstring.generate();
             const data = await User.updateOne({ email: email }, { $set: { passResetToken: passResetToken } });
@@ -150,22 +163,25 @@ async function forgetPassword(req, res) {
             if (isSendEmail) {
                 return res.status(201).json({ title: "Successful", message: "Please check your mail!!", "passResetToken": passResetToken });
             }
-            else{
-                return res.status(400).json({ title: "Unsuccessful", message: "Internal error Occured!!" });
+            else {
+                throw new BadRequestError(
+                    "Internal server error Occured!!"
+                );
             }
         }
         else {
-            return res.status(200).json({ title: "Unsuccessful", message: "User is not registred!" });
+            throw new UnauthenticatedError(
+                "User is not Registered!"
+            );
         }
     }
     catch (error) {
-        logger.error(error.message);
-        return res.status(400).json({ title: "Unsuccessful", message: error.message });
+        return next(error);
     }
 }
 
 
-async function resetPassword(req, res) {
+async function resetPassword(req, res, next) {
     try {
         const passResetToken = req.params.token;
         const user = await User.find({ passResetToken: passResetToken });
@@ -177,14 +193,16 @@ async function resetPassword(req, res) {
             const hashPassword = bcrypt.hashSync(req.body.password, salt);
 
             const data = await User.updateOne({ passResetToken: passResetToken }, { $set: { password: hashPassword, passResetToken: null } });
-            return res.status(201).json({ title: "Successful", message: "Password has been Successfully Updated!!" });
+            return res.status(StatusCodes.CREATED).json({ title: "Successful", message: "Password has been Successfully Updated!!" });
         }
         else {
-            return res.status(400).json({message:"Generated Token expired or invalid!"});
+            throw new BadRequestError(
+                "Generated Token expired or invalid!"
+            );
         }
     }
     catch (error) {
-        return res.status(400).json({ title: "Unsuccessful", message: error.message });
+        return next(error);
     }
 }
 
