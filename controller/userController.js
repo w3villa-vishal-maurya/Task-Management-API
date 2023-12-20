@@ -1,6 +1,6 @@
 const User = require("../model/User");
 const { StatusCodes } = require("http-status-codes");
-const { BadRequestError, NotFoundError, UnauthenticatedError } = require("../error");
+const { BadRequestError, UnauthenticatedError } = require("../error");
 const { validationResult } = require('express-validator');
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
@@ -12,7 +12,9 @@ const env = require("dotenv").config();
 
 async function regReq(req, res, next) {
     try {
-        const { name, email, password, phoneNumber } = req.body;
+        const { name, email, password, phoneNumber, role} = req.body;
+
+
         const result = validationResult(req);
         if (!result.isEmpty()) {
             return res.status(400).send(result.array());
@@ -34,7 +36,7 @@ async function regReq(req, res, next) {
 
         // Create new user
         const newUser = await User.create(
-            { name: name, email, email, password: hashPassword, phoneNumber: phoneNumber }
+            { name: name, email, email, password: hashPassword, phoneNumber: phoneNumber , role:role}
         );
 
         logger.info("User Successfully registered!! You can login!");
@@ -52,6 +54,7 @@ async function loginReq(req, res, next) {
 
         const { email, password } = req.body;
         const result = validationResult(req);
+        
         if (!result.isEmpty()) {
             logger.error(`Form Validation Error Occured`);
             logger.error(result.array());
@@ -60,9 +63,11 @@ async function loginReq(req, res, next) {
 
         const user = await User.findOne({ email: email });
         if (user) {
+            const _id = user._id;
+            const role = user.role;
             if (bcrypt.compareSync(password, user.password)) {
                 const accessToken = jwt.sign({
-                    _id: user._id
+                    _id, role
                 }, process.env.SECRET_KEY, { expiresIn: 60 * 60 });
 
                 // req.session.autherization = {

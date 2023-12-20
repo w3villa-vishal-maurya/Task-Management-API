@@ -8,8 +8,7 @@ const logger = require("../logger/logger");
 async function showTask(req, res, next) {
     try {
         const user_id = req.user._id;
-        const allTask = await Task.find({ user_id: user_id });
-
+        const allTask = await Task.find({ user_id: user_id});
 
         if (allTask.length > 0) {
 

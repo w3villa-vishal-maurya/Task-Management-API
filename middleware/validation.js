@@ -49,9 +49,20 @@ function verifyJWT(req, res, next) {
     }
 }
 
+function restrict(role) {
+    return (req, res, next) => {
+        if (req.user.role !== role) {
+            const error = new Error("You do not have permission to create project", 403);
+            next(error);
+        }
+        next();
+    }
+}
+
 module.exports = {
     regValidator,
     loginValidator,
     taskValidator,
-    verifyJWT
+    verifyJWT,
+    restrict
 };

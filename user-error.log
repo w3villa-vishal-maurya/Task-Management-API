@@ -4,6 +4,7 @@
 [error] token is not defined, 2023-12-13 23:30:45 
 [error] token is not defined, 2023-12-13 23:32:05 
 [error] token is not defined, 2023-12-13 23:32:54 
+<<<<<<< HEAD
 [error] E11000 duplicate key error collection: taskDB.users index: email_1 dup key: { email: "vishalprakash0202@gmail.com" }, 2023-12-20 15:38:28 
 [error] E11000 duplicate key error collection: taskDB.users index: email_1 dup key: { email: "vishalprakash0202@gmail.com" }, 2023-12-20 15:39:38 
 [error] E11000 duplicate key error collection: taskDB.users index: email_1 dup key: { email: "vishalprakash0202@gmail.com" }, 2023-12-20 15:40:38 
@@ -32,3 +33,21 @@
 [error] User is not Registered!, 2023-12-20 16:12:14 
 [error] Wrong Credentials!!!, 2023-12-20 16:16:53 
 [error] User is not Registered!, 2023-12-20 16:17:08 
+=======
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:19:36 
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:21:24 
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:22:42 
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:23:34 
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:24:43 
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:25:24 
+[error] Task validation failed: user_id: Path `user_id` is required., 2023-12-19 13:25:57 
+[error] Operation `projects.insertOne()` buffering timed out after 10000ms, 2023-12-19 13:37:09 
+[error] mongodb is not defined, 2023-12-19 15:25:22 
+[error] Cannot read properties of undefined (reading 'push'), 2023-12-19 15:25:57 
+[error] Cannot read properties of undefined (reading 'push'), 2023-12-19 15:26:23 
+[error] project[0].includes is not a function, 2023-12-19 15:42:58 
+[error] Cannot set headers after they are sent to the client, 2023-12-19 15:43:17 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-19 15:45:12 
+[error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-19 15:50:33 
+[error] Task validation failed: description: Path `description` is required., 2023-12-19 16:01:39 
+>>>>>>> roleauthentication
