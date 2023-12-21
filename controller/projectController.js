@@ -177,6 +177,43 @@ async function selectProjectTask(req, res, next) {
     }
 }
 
+async function getProjectById(req, res, next) {
+    try {
+        const projectId = req.params.projectId;
+        const user_id = req.user._id;
+
+        const project = await Project.findOne({ _id: new mongodb.ObjectId(projectId) });
+        if (project) {
+            const projectTask = await ProjectTask.find({
+                project_id: new mongodb.ObjectId(projectId)
+            });
+
+            const userList = project?.users;
+
+
+            const projectUser = await User.find({ "_id": { "$in": userList } }).select('_id name').lean();
+
+
+            if (projectTask.length) {
+                res.status(StatusCodes.OK).json({ project: project, projectTask: projectTask, projectUser: projectUser });
+            }
+            else {
+                res.status(StatusCodes.OK).json({ project: project, projectTask: [] });
+            }
+        }
+        else {
+            throw new NotFoundError(
+                "No any project exixts with this Id!"
+            )
+        }
+    }
+    catch (err) {
+        return next(err);
+    }
+}
+
+
+
 
 
 
@@ -185,5 +222,6 @@ module.exports = {
     addUserToProject,
     createProjectTask,
     showAssignedProject,
-    selectProjectTask
+    selectProjectTask,
+    getProjectById
 }

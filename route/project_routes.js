@@ -1,11 +1,14 @@
 const project_routes = require("express").Router();
 const { verifyJWT, restrict } = require("../middleware/validation");
-const { createProject, addUserToProject, showAssignedProject, createProjectTask, selectProjectTask } = require("../controller/projectController")
+const { createProject, addUserToProject, showAssignedProject, createProjectTask, selectProjectTask, getProjectById} = require("../controller/projectController")
 
 
 project_routes.use(verifyJWT);
 
 project_routes.get("/show-assigned-project", showAssignedProject);
+
+project_routes.get("/:projectId", getProjectById);
+
 
 project_routes.post("/select-project-task", selectProjectTask);
 
