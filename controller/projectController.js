@@ -74,9 +74,6 @@ async function addUserToProject(req, res) {
 
 async function createProjectTask(req, res, next) {
     try {
-        // project_id
-        // description
-        // completed
 
         const { projectId, description } = req.body;
         const project = await Project.findOne({ _id: new mongodb.ObjectId(projectId) });
@@ -193,13 +190,7 @@ async function getProjectById(req, res, next) {
 
             const projectUser = await User.find({ "_id": { "$in": userList } }).select('_id name').lean();
 
-
-            if (projectTask.length) {
-                res.status(StatusCodes.OK).json({ project: project, projectTask: projectTask, projectUser: projectUser });
-            }
-            else {
-                res.status(StatusCodes.OK).json({ project: project, projectTask: [] });
-            }
+            res.status(StatusCodes.OK).json({ project: project, projectTask: projectTask, projectUser: projectUser });
         }
         else {
             throw new NotFoundError(
