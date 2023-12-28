@@ -8,13 +8,9 @@ const mongodb = require("mongodb");
 
 async function showAllUsers(req, res, next) {
     try {
-        // Project Id
-        console.log("Hello all");
-
-        // Find project data
         const projectId = req.body.projectId;
 
-        const project = await Project.find({ _id: new mongodb.ObjectId(projectId) });
+        const project = await Project.findOne({ _id: new mongodb.ObjectId(projectId) });
 
         const users = await User.find({ _id: { $nin: project?.users } });
 
@@ -49,18 +45,18 @@ async function createProject(req, res, next) {
     }
 }
 
-async function addUserToProject(req, res) {
+async function addUserToProject(req, res, next) {
     try {
         const projectId = req.body.projectId;
-        const user_id = req.body.user_id;
+        const allUsersId = req.body.addUsers;
 
         const project = await Project.find({ _id: new mongodb.ObjectId(projectId) });
-        const user = await User.find({ _id: new mongodb.ObjectId(user_id) });
+        // const user = await User.find({ _id: new mongodb.ObjectId(user_id) });
 
-        if (project.length && user.length) {
+        if (project.length) {
 
-            if (!project[0].users.includes(user_id)) {
-                project[0].users.push(user_id);
+            if (allUsersId.length) {
+                project[0].users.push(...allUsersId);
 
                 const update = { ...project[0] }
                 const filter = { _id: new mongodb.ObjectId(projectId) };
@@ -226,10 +222,6 @@ async function getProjectById(req, res, next) {
         return next(err);
     }
 }
-
-
-
-
 
 
 module.exports = {

@@ -14,11 +14,9 @@ project_routes.use(verifyJWT);
 
 project_routes.get("/show-assigned-project", showAssignedProject);
 
-project_routes.get("/show-users", showAllUsers);
+project_routes.post("/show-users", showAllUsers);
 
 project_routes.get("/:projectId", getProjectById);
-
-
 
 project_routes.post("/select-project-task", selectProjectTask);
 
@@ -36,6 +34,5 @@ project_routes.post("/create-project", createProject);
 project_routes.post("/create-project-task", createProjectTask);
 
 project_routes.post("/add-user-to-project", addUserToProject);
-
 
 module.exports = project_routes;
