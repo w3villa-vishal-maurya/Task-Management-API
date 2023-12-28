@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const projectSchema = new mongoose.Schema({
     projectName: String,
+    projectDescription: String,
     users: [
         {
             type: mongoose.Schema.Types.ObjectId,

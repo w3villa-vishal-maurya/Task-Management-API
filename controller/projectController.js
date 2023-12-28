@@ -6,7 +6,31 @@ const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError } = require("../error");
 const mongodb = require("mongodb");
 
+async function showAllUsers(req, res, next) {
+    try {
+        // Project Id
+        console.log("Hello all");
 
+        // Find project data
+        const projectId = req.body.projectId;
+
+        const project = await Project.find({ _id: new mongodb.ObjectId(projectId) });
+
+        const users = await User.find({ _id: { $nin: project?.users } });
+
+        if (users.length) {
+            return res.status(StatusCodes.OK).json({ "Users": users });
+        }
+        else {
+            throw new NotFoundError(
+                "No any user exists!"
+            );
+        }
+    }
+    catch (err) {
+        return next(err);
+    }
+}
 
 async function createProject(req, res, next) {
     try {
@@ -75,11 +99,11 @@ async function addUserToProject(req, res) {
 async function createProjectTask(req, res, next) {
     try {
 
-        const { projectId, description } = req.body;
+        const { projectId, taskName, taskDescription } = req.body;
         const project = await Project.findOne({ _id: new mongodb.ObjectId(projectId) });
 
         if (project) {
-            const newProjectTask = await ProjectTask.create({ project_id: projectId, description: description })
+            const newProjectTask = await ProjectTask.create({ project_id: projectId, taskName: taskName, taskDescription: taskDescription })
 
             return res.status(StatusCodes.CREATED).json({ message: "New project task has been declared !" });
         }
@@ -214,5 +238,6 @@ module.exports = {
     createProjectTask,
     showAssignedProject,
     selectProjectTask,
-    getProjectById
+    getProjectById,
+    showAllUsers
 }

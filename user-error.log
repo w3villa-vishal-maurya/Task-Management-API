@@ -51,3 +51,5 @@
 [error] input must be a 24 character hex string, 12 byte Uint8Array, or an integer, 2023-12-19 15:50:33 
 [error] Task validation failed: description: Path `description` is required., 2023-12-19 16:01:39 
 >>>>>>> roleauthentication
+[error] User is not Registered!, 2023-12-22 13:29:20 
+[error] Wrong Credentials!!!, 2023-12-22 13:29:29 

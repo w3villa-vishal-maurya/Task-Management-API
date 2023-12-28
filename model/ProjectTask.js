@@ -6,7 +6,11 @@ const projectTaskSchema = new mongoose.Schema({
         required: true,
         ref: 'Project'
     },
-    description: {
+    taskName: {
+        type: String,
+        required: true
+    },
+    taskDescription: {
         type: String,
         required: true
     },
