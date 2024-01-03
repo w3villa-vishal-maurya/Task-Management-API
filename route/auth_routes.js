@@ -30,7 +30,7 @@ auth_routes.use(verifyJWT);
 // ##### Task Routes #############
 
 auth_routes.get("/showall",
-    // showTaskCache,
+    showTaskCache,
     showTask);
 
 auth_routes.post("/createnew",
@@ -39,15 +39,15 @@ auth_routes.post("/createnew",
 );
 
 auth_routes.get("/pending",
-    // getPendingTaskCache,
+    getPendingTaskCache,
     getPendingTask);
 
 auth_routes.get("/complete",
-    // getCompletedTaskCache,
+    getCompletedTaskCache,
     getCompletedTask);
 
 auth_routes.get("/:id",
-    // taskWithIdCache,
+    taskWithIdCache,
     taskWithId);
 
 

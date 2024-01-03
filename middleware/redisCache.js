@@ -5,7 +5,7 @@ async function showTaskCache(req, res, next) {
         const user_id = req.user._id;
         const data = await client.get(`${user_id}alltask`);
         if (data) {
-            return res.status(200).send({ "All Tasks": JSON.parse(data) });
+            return res.status(200).send({ "Task": JSON.parse(data) });
         }
         else {
             next();
@@ -37,7 +37,7 @@ async function getPendingTaskCache(req, res, next) {
         const user_id = req.user._id;
         const data = await client.get(`${user_id}pendingtask`);
         if (data) {
-            return res.status(200).send({ "Task": JSON.parse(data) });
+            return res.status(200).send({ "pendingTask": JSON.parse(data) });
         }
         else {
             next();
@@ -53,7 +53,7 @@ async function getCompletedTaskCache(req, res, next) {
         const user_id = req.user._id;
         const data = await client.get(`${user_id}completedtask`);
         if (data) {
-            return res.status(200).send({ "Task": JSON.parse(data) });
+            return res.status(200).send({ "completedTask": JSON.parse(data) });
         }
         else {
             next();

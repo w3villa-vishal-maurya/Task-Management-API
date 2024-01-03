@@ -2,7 +2,7 @@ const Task = require("../model/Task")
 const mongodb = require("mongodb");
 const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, NotFoundError} = require("../error");
-// const client = require("../redis/client");
+const client = require("../redis/client");
 const logger = require("../logger/logger");
 
 async function showTask(req, res, next) {
@@ -13,7 +13,7 @@ async function showTask(req, res, next) {
         if (allTask.length > 0) {
 
             // Cache data to redis...
-            // client.set(`${user_id}alltask`, JSON.stringify(allTask));
+            client.set(`${user_id}alltask`, JSON.stringify(allTask));
 
             logger.info("All task have been responded!");
             return res.status(StatusCodes.OK).send({ "Task": allTask });
@@ -76,7 +76,7 @@ async function taskWithId(req, res, next) {
         if (result.length > 0) {
 
             // Cache data to redis...
-            // client.set(`${user_id}taskWithId`, JSON.stringify(result));
+            client.set(`${user_id}taskWithId`, JSON.stringify(result));
 
             return res.status(StatusCodes.OK).send({ "Task": result });
         }
@@ -186,7 +186,7 @@ async function getPendingTask(req, res, next) {
             })
 
             // Cache data to redis...
-            // client.set(`${user_id}pendingtask`, JSON.stringify(pendingTask));
+            client.set(`${user_id}pendingtask`, JSON.stringify(pendingTask));
 
             return res.status(StatusCodes.OK).send({ "pendingTask": pendingTask });
         }
@@ -217,7 +217,7 @@ async function getCompletedTask(req, res, next) {
             })
 
             // Cache data to redis...
-            // client.set(`${user_id}completedtask`, JSON.stringify(completedTask));
+            client.set(`${user_id}completedtask`, JSON.stringify(completedTask));
 
             return res.status(StatusCodes.OK).send({ "completedTask": completedTask });
         }
