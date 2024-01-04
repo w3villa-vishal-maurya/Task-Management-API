@@ -5,7 +5,7 @@ const logger = require("../logger/logger");
 const REDIS_URL = process.env.REDIS_URL ;
 
 const client = redis.createClient({
-    REDIS_URL
+  url: REDIS_URL
 });
 
 client.connect();
